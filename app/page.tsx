@@ -45,7 +45,7 @@ const services = [
     icon: Globe2,
     title: 'Global Talent Search',
     description:
-      'We help companies hire across regions, including the US, India, Europe, and remote markets, balancing cost, capability, and cultural alignment for distributed teams.',
+      'We help companies hire across North America, Europe, India, LATAM, and remote markets, balancing cost, capability, and cultural alignment for distributed teams.',
   },
   {
     icon: Handshake,
@@ -74,6 +74,24 @@ const differentiators = [
   },
 ];
 
+const engagementModels = [
+  {
+    title: 'Permanent Hiring (FTE)',
+    description:
+      'Support for full-time employee hiring across leadership, Engineering, Cloud, Infrastructure, Security, Product, and other specialist mandates where long-term fit matters.',
+  },
+  {
+    title: 'Contract / C2C',
+    description:
+      'Flexible support for contract and Corp-to-Corp hiring when clients need specialist capability, delivery support, or project-based expertise through independent business entities or consulting structures.',
+  },
+  {
+    title: 'RPO Support',
+    description:
+      'Recruitment Process Outsourcing for companies that need a more embedded hiring partner. We can support part or all of the recruitment function as an extension of the internal team, especially during scale-up phases or targeted hiring programs.',
+  },
+];
+
 const process = [
   {
     step: '01',
@@ -93,28 +111,25 @@ const process = [
   {
     step: '04',
     title: 'Interview & Close',
-    text: 'We support interview flow, candidate engagement, offer strategy, and close management to improve conversion and confidence.',
+    text: 'We manage interview flow, candidate engagement, offer strategy, and final negotiations while supporting smooth onboarding, long-term alignment, and ongoing follow-up after candidates join.',
   },
 ];
 
-const testimonials = [
+const proofBlocks = [
   {
-    quote:
-      'Credence Talent quickly understood our platform engineering needs and delivered candidates who were both technically strong and culturally aligned.',
-    name: 'Engineering Leader',
-    role: 'Director, Platform Engineering',
+    title: 'Calibrated shortlists for technical depth',
+    text:
+      'We help clients define the mandate properly, reduce noise in the search, and reach candidates who align with the actual technical and business context of the role.',
   },
   {
-    quote:
-      "What stood out was the clarity and honesty in communication. We weren't flooded with resumes, just the right candidates.",
-    name: 'Hiring Manager',
-    role: 'Head of Technology',
+    title: 'Stronger candidate representation in the market',
+    text:
+      'Our process is designed to represent client opportunities well, communicate clearly, and create confidence with high-value candidates from first outreach to final close.',
   },
   {
-    quote:
-      'A reliable partner for scaling teams globally. They understand both the market and the role deeply.',
-    name: 'Founder',
-    role: 'Tech Startup',
+    title: 'Search support built for scale and complexity',
+    text:
+      'From single critical hires to broader hiring programs, we bring structure, consistency, and better search discipline across leadership and specialist mandates.',
   },
 ];
 
@@ -296,7 +311,9 @@ export default function Page() {
 
           <nav className="hidden items-center gap-7 text-sm text-slate-600 lg:flex">
             <a href="#services" className="transition hover:text-slate-950">Services</a>
+            <Link href="/engagement-models" className="transition hover:text-slate-950">What We Do</Link>
             <Link href="/sectors" className="transition hover:text-slate-950">Sectors</Link>
+            <Link href="/roles" className="transition hover:text-slate-950">Roles</Link>
             <a href="#about" className="transition hover:text-slate-950">Expertise</a>
             <a href="#process" className="transition hover:text-slate-950">Process</a>
             <a href="#insights" className="transition hover:text-slate-950">Insights</a>
@@ -446,6 +463,33 @@ export default function Page() {
           </div>
         </section>
 
+        <section id="what-we-do" className="bg-white py-24">
+          <div className="mx-auto max-w-7xl px-6 lg:px-8">
+            <SectionHeading
+              eyebrow="What We Do"
+              title="Flexible hiring support across permanent, contract, and embedded recruitment models"
+              description="Clients do not always need the same hiring model. We support full-time hiring, contract and C2C mandates, and RPO-style engagement where a more embedded recruiting partner adds value."
+            />
+            <div className="mt-14 grid gap-6 md:grid-cols-3">
+              {engagementModels.map((model) => (
+                <Card key={model.title} className="rounded-[2rem] border border-slate-200 bg-slate-50/70 p-8 shadow-sm">
+                  <h3 className="font-display text-3xl font-semibold tracking-tight text-slate-950">{model.title}</h3>
+                  <p className="mt-4 text-sm leading-7 text-slate-600">{model.description}</p>
+                </Card>
+              ))}
+            </div>
+            <div className="mt-10">
+              <Link
+                href="/engagement-models"
+                className="inline-flex items-center rounded-2xl bg-slate-950 px-6 py-3 text-sm font-medium text-white transition hover:bg-slate-800"
+              >
+                Explore Engagement Models
+                <ArrowRight className="ml-2 h-4 w-4" />
+              </Link>
+            </div>
+          </div>
+        </section>
+
         <section id="sectors" className="py-20">
           <div className="mx-auto max-w-7xl px-6 lg:px-8">
             <div className="rounded-[2.5rem] border border-slate-200 bg-slate-950 px-6 py-12 text-white shadow-xl lg:px-10">
@@ -456,20 +500,48 @@ export default function Page() {
                     Flexible enough for multiple industries, sharp enough to feel specialized.
                   </h2>
                   <p className="mt-5 max-w-2xl text-lg leading-8 text-slate-300">
-                    Credence Talent supports hiring across engineering, cloud, infrastructure, security, digital transformation, and growth-stage technology functions while maintaining a premium, focused positioning.
+                    Credence Talent supports hiring across Engineering, Cloud, Infrastructure, Security, Digital Transformation, and growth-stage technology functions with a premium, focused positioning. We work across both Industry contexts and Core Technologies so clients can see the depth behind each search.
                   </p>
                 </div>
                 <div className="grid gap-4 sm:grid-cols-2">
-                  {sectorPages.map((sector) => (
-                    <Link
-                      key={sector.slug}
-                      href={`/sectors/${sector.slug}`}
-                      className="rounded-3xl border border-white/10 bg-white/5 px-5 py-5 text-sm text-slate-200 backdrop-blur-sm transition hover:border-emerald-300/40 hover:bg-white/10"
-                    >
-                      <div className="font-semibold text-white">{sector.label}</div>
-                      <div className="mt-2 text-slate-300">{sector.summary}</div>
-                    </Link>
-                  ))}
+                  <div className="rounded-3xl border border-white/10 bg-white/5 p-5 backdrop-blur-sm sm:col-span-2">
+                    <div className="text-xs font-semibold uppercase tracking-[0.24em] text-emerald-300">Industry</div>
+                    <div className="mt-4 grid gap-4 sm:grid-cols-2">
+                      {sectorPages
+                        .filter((sector) =>
+                          ['leadership-search', 'global-hiring', 'fintech-recruitment'].includes(sector.slug)
+                        )
+                        .map((sector) => (
+                          <Link
+                            key={sector.slug}
+                            href={`/sectors/${sector.slug}`}
+                            className="rounded-3xl border border-white/10 bg-white/5 px-5 py-5 text-sm text-slate-200 transition hover:border-emerald-300/40 hover:bg-white/10"
+                          >
+                            <div className="font-semibold text-white">{sector.label}</div>
+                            <div className="mt-2 text-slate-300">{sector.summary}</div>
+                          </Link>
+                        ))}
+                    </div>
+                  </div>
+                  <div className="rounded-3xl border border-white/10 bg-white/5 p-5 backdrop-blur-sm sm:col-span-2">
+                    <div className="text-xs font-semibold uppercase tracking-[0.24em] text-emerald-300">Core Technologies</div>
+                    <div className="mt-4 grid gap-4 sm:grid-cols-2">
+                      {sectorPages
+                        .filter((sector) =>
+                          ['technology-hiring', 'cloud-infrastructure', 'cybersecurity-recruitment'].includes(sector.slug)
+                        )
+                        .map((sector) => (
+                          <Link
+                            key={sector.slug}
+                            href={`/sectors/${sector.slug}`}
+                            className="rounded-3xl border border-white/10 bg-white/5 px-5 py-5 text-sm text-slate-200 transition hover:border-emerald-300/40 hover:bg-white/10"
+                          >
+                            <div className="font-semibold text-white">{sector.label}</div>
+                            <div className="mt-2 text-slate-300">{sector.summary}</div>
+                          </Link>
+                        ))}
+                    </div>
+                  </div>
                 </div>
                 <div className="lg:col-span-2">
                   <Link
@@ -488,7 +560,7 @@ export default function Page() {
         <section id="about" className="mx-auto max-w-7xl px-6 py-24 lg:px-8">
           <div className="grid gap-14 lg:grid-cols-[1fr_1fr]">
             <div>
-              <SectionHeading eyebrow="Expertise" title="Built on deep experience across engineering, cloud, and enterprise systems" description="Credence Talent brings hands-on understanding of modern software delivery, helping companies hire across the full SDLC with confidence." />
+              <SectionHeading eyebrow="Expertise" title="Built on deep experience across Engineering, Cloud, and Enterprise Systems" description="Credence Talent brings hands-on understanding of modern software delivery, helping companies hire across the full SDLC with confidence." />
               <div className="mt-8 space-y-5 text-base leading-8 text-slate-600">
                 <p>
                   Credence Talent was built to address a gap in the recruitment market, where complex technology roles across the SDLC are often misunderstood and hiring becomes inefficient. We bring real-world engineering understanding into the hiring process, helping companies make better decisions with confidence.
@@ -549,17 +621,26 @@ export default function Page() {
 
         <section id="insights" className="bg-slate-50 py-24">
           <div className="mx-auto max-w-7xl px-6 lg:px-8">
-            <SectionHeading eyebrow="Client Perspective" title="What clients value in a high-trust search partnership" description="Our work is built around clarity, quality, and strong representation in the market, especially for complex technical and leadership roles." />
+            <SectionHeading eyebrow="Search Value" title="How we create value in high-trust hiring environments" description="Where the mandate is important, the process needs to do more than generate applicants. It needs to improve calibration, market representation, and decision quality." />
             <div className="mt-14 grid gap-6 lg:grid-cols-3">
-              {testimonials.map((item) => (
-                <Card key={item.quote} className="rounded-[2rem] border border-slate-200 bg-white p-8 shadow-sm">
-                  <p className="text-base leading-8 text-slate-700">&ldquo;{item.quote}&rdquo;</p>
-                  <div className="mt-7 border-t border-slate-100 pt-5">
-                    <div className="font-semibold text-slate-950">{item.name}</div>
-                    <div className="text-sm text-slate-500">{item.role}</div>
+              {proofBlocks.map((item) => (
+                <Card key={item.title} className="rounded-[2rem] border border-slate-200 bg-white p-8 shadow-sm">
+                  <div className="inline-flex rounded-2xl bg-emerald-50 p-3 text-emerald-700">
+                    <BadgeCheck className="h-5 w-5" />
                   </div>
+                  <div className="font-display mt-6 text-2xl font-semibold text-slate-950">{item.title}</div>
+                  <p className="mt-4 text-sm leading-7 text-slate-600">{item.text}</p>
                 </Card>
               ))}
+            </div>
+            <div className="mt-10">
+              <Link
+                href="/roles"
+                className="inline-flex items-center rounded-2xl bg-slate-950 px-6 py-3 text-sm font-medium text-white transition hover:bg-slate-800"
+              >
+                Explore Roles We Cover
+                <ArrowRight className="ml-2 h-4 w-4" />
+              </Link>
             </div>
           </div>
         </section>

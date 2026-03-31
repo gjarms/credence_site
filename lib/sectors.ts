@@ -23,7 +23,7 @@ export const sectorPages: SectorPage[] = [
       'Search support across software engineering, platform, DevOps, cloud, QA, data, and security functions where technical credibility matters.',
     intro:
       'Credence Talent supports companies hiring into product-led and engineering-led environments where role definition, capability assessment, and market representation all affect hiring outcomes. We work best where the mandate is important, the talent market is competitive, and the shortlist needs to be precise.',
-    heroImage: '/sectors/technology-hiring.svg',
+    heroImage: '/sectors/photos/technology-hiring.jpg',
     marketFocus: [
       'Software engineering organizations scaling core product teams',
       'Platform and infrastructure functions modernizing delivery environments',
@@ -63,7 +63,7 @@ export const sectorPages: SectorPage[] = [
       'Focused executive and senior leadership hiring across engineering, product, operations, and business functions.',
     intro:
       'Leadership hiring shapes culture, execution quality, and long-term growth. Credence Talent supports founder-led companies, scaling teams, and established organizations that need thoughtful search support for senior appointments, not a volume-led recruitment process.',
-    heroImage: '/sectors/leadership-search.svg',
+    heroImage: '/sectors/photos/leadership-search.jpg',
     marketFocus: [
       'Founder-led businesses making key first or second leadership hires',
       'Scaling companies strengthening engineering, product, or delivery leadership',
@@ -102,7 +102,7 @@ export const sectorPages: SectorPage[] = [
       'Hiring support for platform, cloud operations, reliability, systems, networking, and infrastructure transformation roles.',
     intro:
       'Cloud and infrastructure hiring often sits at the intersection of engineering, operations, reliability, cost, and risk. Credence Talent helps clients hire into these functions with a clearer understanding of how the role operates inside the broader technical ecosystem.',
-    heroImage: '/sectors/cloud-infrastructure.svg',
+    heroImage: '/sectors/photos/cloud-infrastructure.jpg',
     marketFocus: [
       'Platform modernization and cloud migration programs',
       'Reliability, observability, and operational maturity initiatives',
@@ -141,7 +141,7 @@ export const sectorPages: SectorPage[] = [
       'Search support for organizations hiring across the US, India, Europe, and remote-first markets with a premium, high-touch approach.',
     intro:
       'Global hiring requires more than widening the search geography. It demands better role framing, stronger calibration around communication and market context, and a process that can carry credibility across regions. Credence Talent supports that work with a structured, international mindset.',
-    heroImage: '/sectors/global-hiring.svg',
+    heroImage: '/sectors/photos/global-hiring.jpg',
     marketFocus: [
       'Companies building distributed engineering and leadership teams',
       'Organizations comparing onshore, offshore, and remote hiring strategies',
@@ -180,7 +180,7 @@ export const sectorPages: SectorPage[] = [
       'Search support for fintech businesses hiring across engineering, platform, security, product, and leadership roles where reliability and trust are central.',
     intro:
       'Fintech hiring often sits at the intersection of technology depth, regulated environments, security discipline, and customer trust. Credence Talent supports fintech companies that need credible search execution for roles that affect systems resilience, delivery quality, compliance posture, and product scale.',
-    heroImage: '/sectors/fintech-recruitment.svg',
+    heroImage: '/sectors/photos/fintech-recruitment.jpg',
     marketFocus: [
       'Payments, lending, wealth, banking infrastructure, and embedded finance environments',
       'Product and engineering teams building secure, reliable transaction systems',
@@ -219,7 +219,7 @@ export const sectorPages: SectorPage[] = [
       'Hiring support across cloud security, AppSec, security engineering, governance, detection, and security leadership roles.',
     intro:
       'Cybersecurity hiring requires more than matching certifications to job specs. The strongest hires combine technical depth, sound judgment, communication ability, and the credibility to operate across engineering, infrastructure, and risk stakeholders. Credence Talent supports clients looking for that level of fit.',
-    heroImage: '/sectors/cybersecurity-recruitment.svg',
+    heroImage: '/sectors/photos/cybersecurity-recruitment.jpg',
     marketFocus: [
       'Organizations strengthening cloud, platform, and application security maturity',
       'Businesses building security programs alongside product and infrastructure scale',
