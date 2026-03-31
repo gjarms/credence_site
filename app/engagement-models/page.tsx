@@ -1,10 +1,29 @@
 import Link from 'next/link';
+import type { Metadata } from 'next';
 import { ArrowRight, BadgeCheck, BriefcaseBusiness, Building2, Handshake } from 'lucide-react';
+import { defaultOgImage } from '@/lib/site';
 
-export const metadata = {
-  title: 'Engagement Models | Credence Talent',
+export const metadata: Metadata = {
+  title: 'Engagement Models',
   description:
     'Explore Credence Talent engagement models across permanent hiring, contract / C2C support, and RPO-style embedded recruitment.',
+  alternates: {
+    canonical: '/engagement-models',
+  },
+  openGraph: {
+    title: 'Engagement Models | Credence Talent',
+    description:
+      'Explore Credence Talent engagement models across permanent hiring, contract / C2C support, and RPO-style embedded recruitment.',
+    url: '/engagement-models',
+    images: [defaultOgImage],
+  },
+  twitter: {
+    card: 'summary_large_image',
+    title: 'Engagement Models | Credence Talent',
+    description:
+      'Explore Credence Talent engagement models across permanent hiring, contract / C2C support, and RPO-style embedded recruitment.',
+    images: [defaultOgImage],
+  },
 };
 
 const models = [

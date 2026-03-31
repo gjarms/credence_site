@@ -1,7 +1,9 @@
 import Link from 'next/link';
+import type { Metadata } from 'next';
 import { notFound } from 'next/navigation';
 import { ArrowRight, BadgeCheck } from 'lucide-react';
 import { getSectorBySlug, sectorPages } from '@/lib/sectors';
+import { siteName } from '@/lib/site';
 
 type SectorPageProps = {
   params: {
@@ -13,7 +15,7 @@ export function generateStaticParams() {
   return sectorPages.map((sector) => ({ slug: sector.slug }));
 }
 
-export function generateMetadata({ params }: SectorPageProps) {
+export function generateMetadata({ params }: SectorPageProps): Metadata {
   const sector = getSectorBySlug(params.slug);
 
   if (!sector) {
@@ -21,8 +23,28 @@ export function generateMetadata({ params }: SectorPageProps) {
   }
 
   return {
-    title: `${sector.label} | Credence Talent`,
+    title: sector.label,
     description: sector.summary,
+    alternates: {
+      canonical: `/sectors/${sector.slug}`,
+    },
+    openGraph: {
+      title: `${sector.label} | ${siteName}`,
+      description: sector.summary,
+      url: `/sectors/${sector.slug}`,
+      images: [
+        {
+          url: sector.heroImage,
+          alt: sector.label,
+        },
+      ],
+    },
+    twitter: {
+      card: 'summary_large_image',
+      title: `${sector.label} | ${siteName}`,
+      description: sector.summary,
+      images: [sector.heroImage],
+    },
   };
 }
 

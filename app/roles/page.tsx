@@ -1,11 +1,30 @@
 import Link from 'next/link';
+import type { Metadata } from 'next';
 import { ArrowRight, BadgeCheck } from 'lucide-react';
 import { roleCategories } from '@/lib/roles';
+import { defaultOgImage } from '@/lib/site';
 
-export const metadata = {
-  title: 'Roles We Cover | Credence Talent',
+export const metadata: Metadata = {
+  title: 'Roles We Cover',
   description:
     'Explore the role categories Credence Talent supports across leadership, engineering, cloud, infrastructure, security, data, AI, product, and delivery hiring.',
+  alternates: {
+    canonical: '/roles',
+  },
+  openGraph: {
+    title: 'Roles We Cover | Credence Talent',
+    description:
+      'Explore the role categories Credence Talent supports across leadership, engineering, cloud, infrastructure, security, data, AI, product, and delivery hiring.',
+    url: '/roles',
+    images: [defaultOgImage],
+  },
+  twitter: {
+    card: 'summary_large_image',
+    title: 'Roles We Cover | Credence Talent',
+    description:
+      'Explore the role categories Credence Talent supports across leadership, engineering, cloud, infrastructure, security, data, AI, product, and delivery hiring.',
+    images: [defaultOgImage],
+  },
 };
 
 export default function RolesPage() {

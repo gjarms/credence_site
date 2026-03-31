@@ -1,11 +1,30 @@
 import Link from 'next/link';
+import type { Metadata } from 'next';
 import { ArrowRight, BadgeCheck } from 'lucide-react';
 import { sectorPages } from '@/lib/sectors';
+import { defaultOgImage } from '@/lib/site';
 
-export const metadata = {
-  title: 'Sectors & Roles | Credence Talent',
+export const metadata: Metadata = {
+  title: 'Sectors & Roles',
   description:
     'Explore Credence Talent sector coverage across technology hiring, leadership search, cloud and infrastructure recruitment, and global hiring.',
+  alternates: {
+    canonical: '/sectors',
+  },
+  openGraph: {
+    title: 'Sectors & Roles | Credence Talent',
+    description:
+      'Explore Credence Talent sector coverage across technology hiring, leadership search, cloud and infrastructure recruitment, and global hiring.',
+    url: '/sectors',
+    images: [defaultOgImage],
+  },
+  twitter: {
+    card: 'summary_large_image',
+    title: 'Sectors & Roles | Credence Talent',
+    description:
+      'Explore Credence Talent sector coverage across technology hiring, leadership search, cloud and infrastructure recruitment, and global hiring.',
+    images: [defaultOgImage],
+  },
 };
 
 export default function SectorsPage() {
