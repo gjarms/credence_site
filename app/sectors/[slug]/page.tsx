@@ -57,6 +57,27 @@ export default function SectorDetailPage({ params }: SectorPageProps) {
 
   return (
     <main className="min-h-screen bg-[#f8faf9] text-slate-900">
+      <header className="sticky top-0 z-50 border-b border-slate-200/80 bg-white/90 backdrop-blur-xl">
+        <div className="mx-auto flex max-w-7xl items-center justify-between px-6 py-4 lg:px-8">
+          <Link href="/" className="font-display text-2xl font-semibold tracking-tight text-slate-950">
+            Credence Talent
+          </Link>
+          <nav className="hidden items-center gap-6 text-sm text-slate-600 md:flex">
+            <Link href="/" className="transition hover:text-slate-950">
+              Home
+            </Link>
+            <Link href="/engagement-models" className="transition hover:text-slate-950">
+              What We Do
+            </Link>
+            <Link href="/sectors" className="transition hover:text-slate-950">
+              Sectors
+            </Link>
+            <Link href="/roles" className="transition hover:text-slate-950">
+              Roles
+            </Link>
+          </nav>
+        </div>
+      </header>
       <section className="border-b border-slate-200 bg-white">
         <div className="mx-auto grid max-w-7xl gap-12 px-6 py-16 lg:grid-cols-[1fr_0.9fr] lg:px-8 lg:py-20">
           <div className="flex flex-col justify-center">

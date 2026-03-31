@@ -11,6 +11,27 @@ export const metadata = {
 export default function SectorsPage() {
   return (
     <main className="min-h-screen bg-[#f8faf9] text-slate-900">
+      <header className="sticky top-0 z-50 border-b border-slate-200/80 bg-white/90 backdrop-blur-xl">
+        <div className="mx-auto flex max-w-7xl items-center justify-between px-6 py-4 lg:px-8">
+          <Link href="/" className="font-display text-2xl font-semibold tracking-tight text-slate-950">
+            Credence Talent
+          </Link>
+          <nav className="hidden items-center gap-6 text-sm text-slate-600 md:flex">
+            <Link href="/" className="transition hover:text-slate-950">
+              Home
+            </Link>
+            <Link href="/engagement-models" className="transition hover:text-slate-950">
+              What We Do
+            </Link>
+            <Link href="/roles" className="transition hover:text-slate-950">
+              Roles
+            </Link>
+            <a href="mailto:hradmin@credencetalent.com" className="transition hover:text-slate-950">
+              Contact
+            </a>
+          </nav>
+        </div>
+      </header>
       <section className="border-b border-slate-200 bg-white">
         <div className="mx-auto max-w-7xl px-6 py-20 lg:px-8">
           <div className="max-w-4xl">
@@ -71,6 +92,40 @@ export default function SectorsPage() {
           ))}
         </div>
       </section>
+      <footer className="border-t border-slate-200 bg-white">
+        <div className="mx-auto grid max-w-7xl gap-8 px-6 py-10 text-sm text-slate-500 md:grid-cols-[1.1fr_0.9fr_1fr] lg:px-8">
+          <div>
+            <div className="font-display text-2xl font-semibold text-slate-950">Credence Talent</div>
+            <p className="mt-4 max-w-md leading-7 text-slate-600">
+              Boutique search support across leadership, technical, infrastructure, security, fintech, and global hiring environments.
+            </p>
+          </div>
+          <div>
+            <div className="font-display text-2xl font-semibold text-slate-950">Navigate</div>
+            <div className="mt-4 grid gap-3 text-slate-600">
+              <Link href="/" className="transition hover:text-slate-950">
+                Home
+              </Link>
+              <Link href="/engagement-models" className="transition hover:text-slate-950">
+                Engagement Models
+              </Link>
+              <Link href="/roles" className="transition hover:text-slate-950">
+                Roles
+              </Link>
+            </div>
+          </div>
+          <div>
+            <div className="font-display text-2xl font-semibold text-slate-950">Discuss a Search</div>
+            <p className="mt-4 leading-7 text-slate-600">
+              Share the mandate at{' '}
+              <a href="mailto:hradmin@credencetalent.com" className="font-medium text-slate-950 hover:text-emerald-700">
+                hradmin@credencetalent.com
+              </a>
+              .
+            </p>
+          </div>
+        </div>
+      </footer>
     </main>
   );
 }
