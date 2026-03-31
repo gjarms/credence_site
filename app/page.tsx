@@ -828,7 +828,7 @@ export default function Page() {
           </div>
           <div>
             <div className="font-display text-2xl font-semibold text-slate-950">Navigation</div>
-            <div className="mt-4 grid gap-3 text-slate-600">
+            <div className="mt-4 grid grid-cols-2 gap-x-8 gap-y-3 text-slate-600">
               <a href="#services" className="transition hover:text-slate-950">Services</a>
               <Link href="/engagement-models" className="transition hover:text-slate-950">What We Do</Link>
               <Link href="/sectors" className="transition hover:text-slate-950">Sectors</Link>
