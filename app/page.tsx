@@ -218,8 +218,9 @@ function ContactForm() {
     event.preventDefault();
     setStatus('submitting');
     setErrorMessage('');
+    const form = event.currentTarget;
 
-    const formData = new FormData(event.currentTarget);
+    const formData = new FormData(form);
     const payload = {
       firstName: String(formData.get('firstName') ?? '').trim(),
       lastName: String(formData.get('lastName') ?? '').trim(),
@@ -242,7 +243,7 @@ function ContactForm() {
         throw new Error(data.error || 'Unable to send your message right now.');
       }
 
-      event.currentTarget.reset();
+      form.reset();
       setStatus('success');
     } catch (error) {
       setStatus('error');
