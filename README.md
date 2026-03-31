@@ -1,13 +1,14 @@
 # Credence Talent Website
 
-This is a Next.js + Tailwind starter for the Credence Talent site.
+This is a Next.js + Tailwind site for Credence Talent.
 
 ## Files included
-- `app/page.tsx` – homepage
-- `app/layout.tsx` – page metadata and favicon
-- `app/globals.css` – Tailwind and global styles
-- `public/credence-logo.png` – logo asset
-- `public/favicon.ico` – favicon asset
+- `app/page.tsx` - homepage
+- `app/layout.tsx` - page metadata and favicon
+- `app/globals.css` - global styles
+- `app/api/contact/route.ts` - contact form email handler
+- `public/credence-logo.svg` - logo asset
+- `public/favicon.ico` - favicon asset
 
 ## Run locally
 1. Install Node.js 18 or newer.
@@ -19,26 +20,34 @@ This is a Next.js + Tailwind starter for the Credence Talent site.
    ```
 4. Open `http://localhost:3000`
 
-## Connect the contact form
-The contact form currently points to:
-`https://formspree.io/f/REPLACE_WITH_YOUR_FORM_ID`
+## Contact form setup
+The site submits inquiries through a Next.js API route using SMTP.
 
-To make it work:
-1. Create a Formspree account.
-2. Create a new form.
-3. Copy the form ID.
-4. Replace `REPLACE_WITH_YOUR_FORM_ID` in `app/page.tsx`.
+Create a local `.env.local` file with:
 
-## Deploy to Vercel
+```bash
+SMTP_HOST=smtp.your-provider.com
+SMTP_PORT=587
+SMTP_USER=your-smtp-username
+SMTP_PASS=your-smtp-password
+CONTACT_TO_EMAIL=hradmin@credencetalent.com
+CONTACT_FROM_EMAIL=hradmin@credencetalent.com
+CONTACT_REPLY_TO_EMAIL=hradmin@credencetalent.com
+```
+
+Notes:
+- `CONTACT_FROM_EMAIL` is optional. If omitted, the app uses `SMTP_USER`.
+- `CONTACT_REPLY_TO_EMAIL` is optional. If omitted, replies go directly to the person who submitted the form.
+- Port `465` uses secure SMTP automatically. Other ports use STARTTLS when supported by your provider.
+
+## Deploy
 1. Push this folder to a GitHub repository.
-2. Sign in to Vercel.
-3. Click **Add New Project**.
-4. Import the GitHub repo.
-5. Keep the defaults and deploy.
-6. In Vercel project settings, add your custom domain.
+2. Deploy it to your preferred platform.
+3. Add the SMTP environment variables in that platform's project settings.
+4. Confirm the contact form sends email successfully in production.
 
 ## Suggested next updates
-- Replace placeholder testimonials with real ones.
-- Replace `hello@credencetalent.com` with your real email.
+- Confirm `hradmin@credencetalent.com` is the correct destination mailbox for inquiries.
+- Replace sample testimonials with approved client quotes or swap the section for case-study content.
 - Add a social share image.
-- Add Google Analytics or Plausible.
+- Add analytics if needed.

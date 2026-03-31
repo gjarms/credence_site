@@ -1,5 +1,6 @@
 'use client';
 
+import { FormEvent, useState } from 'react';
 import { motion } from 'framer-motion';
 import {
   ArrowRight,
@@ -207,6 +208,89 @@ function ButtonLink({
 
 function Card({ className = '', children }: { className?: string; children: React.ReactNode }) {
   return <div className={className}>{children}</div>;
+}
+
+function ContactForm() {
+  const [status, setStatus] = useState<'idle' | 'submitting' | 'success' | 'error'>('idle');
+  const [errorMessage, setErrorMessage] = useState('');
+
+  async function handleSubmit(event: FormEvent<HTMLFormElement>) {
+    event.preventDefault();
+    setStatus('submitting');
+    setErrorMessage('');
+
+    const formData = new FormData(event.currentTarget);
+    const payload = {
+      firstName: String(formData.get('firstName') ?? '').trim(),
+      lastName: String(formData.get('lastName') ?? '').trim(),
+      email: String(formData.get('email') ?? '').trim(),
+      company: String(formData.get('company') ?? '').trim(),
+      message: String(formData.get('message') ?? '').trim(),
+    };
+
+    try {
+      const response = await fetch('/api/contact', {
+        method: 'POST',
+        headers: {
+          'Content-Type': 'application/json',
+        },
+        body: JSON.stringify(payload),
+      });
+
+      if (!response.ok) {
+        const data = (await response.json()) as { error?: string };
+        throw new Error(data.error || 'Unable to send your message right now.');
+      }
+
+      event.currentTarget.reset();
+      setStatus('success');
+    } catch (error) {
+      setStatus('error');
+      setErrorMessage(
+        error instanceof Error ? error.message : 'Unable to send your message right now.'
+      );
+    }
+  }
+
+  return (
+    <form onSubmit={handleSubmit} className="grid gap-5 sm:grid-cols-2">
+      <div>
+        <label htmlFor="firstName" className="mb-2 block text-sm font-medium text-slate-700">First name</label>
+        <input id="firstName" name="firstName" required className="h-12 w-full rounded-2xl border border-slate-300 px-4" placeholder="First name" />
+      </div>
+      <div>
+        <label htmlFor="lastName" className="mb-2 block text-sm font-medium text-slate-700">Last name</label>
+        <input id="lastName" name="lastName" required className="h-12 w-full rounded-2xl border border-slate-300 px-4" placeholder="Last name" />
+      </div>
+      <div>
+        <label htmlFor="email" className="mb-2 block text-sm font-medium text-slate-700">Work email</label>
+        <input id="email" type="email" name="email" required className="h-12 w-full rounded-2xl border border-slate-300 px-4" placeholder="you@company.com" />
+      </div>
+      <div>
+        <label htmlFor="company" className="mb-2 block text-sm font-medium text-slate-700">Company</label>
+        <input id="company" name="company" required className="h-12 w-full rounded-2xl border border-slate-300 px-4" placeholder="Company name" />
+      </div>
+      <div className="sm:col-span-2">
+        <label htmlFor="message" className="mb-2 block text-sm font-medium text-slate-700">How can we help?</label>
+        <textarea id="message" name="message" required className="min-h-[140px] w-full rounded-2xl border border-slate-300 px-4 py-3" placeholder="Tell us about the role, hiring challenge, or growth plan." />
+      </div>
+      <div className="sm:col-span-2 flex flex-wrap items-center gap-4">
+        <button
+          type="submit"
+          disabled={status === 'submitting'}
+          className="h-12 rounded-2xl bg-slate-950 px-6 text-sm font-medium text-white transition hover:bg-slate-800 disabled:cursor-not-allowed disabled:opacity-70"
+        >
+          {status === 'submitting' ? 'Sending...' : 'Send Inquiry'}
+        </button>
+        {status === 'success' ? (
+          <p className="text-sm text-emerald-700">Thanks. Your inquiry has been sent successfully.</p>
+        ) : null}
+        {status === 'error' ? (
+          <p className="text-sm text-rose-700">{errorMessage}</p>
+        ) : null}
+      </div>
+    </form>
+  );
 }
 
 export default function Page() {
@@ -523,56 +607,20 @@ export default function Page() {
                     Whether you&apos;re hiring your first key engineer or scaling a global team, we&apos;re here to help. Let&apos;s discuss your hiring needs and how we can support your growth.
                   </p>
                   <div className="mt-8 grid gap-4 text-sm text-slate-300">
-                    <div className="flex items-center gap-3"><Mail className="h-4 w-4 text-emerald-300" /> hello@credencetalent.com</div>
+                    <div className="flex items-center gap-3"><Mail className="h-4 w-4 text-emerald-300" /> hradmin@credencetalent.com</div>
                     <div className="flex items-center gap-3"><MapPin className="h-4 w-4 text-emerald-300" /> Global recruitment brand with international positioning</div>
                   </div>
                 </div>
 
                 <Card className="rounded-[2rem] border border-white/10 bg-white/95 p-8 text-slate-900 shadow-2xl sm:p-10">
-                  <div className="space-y-6">
-                    <div>
-                      <div className="font-display text-3xl font-semibold text-slate-950">Start the conversation directly</div>
-                      <p className="mt-3 text-sm leading-7 text-slate-600">
-                        We prefer a direct, high-context first conversation. Reach out by email with your hiring brief, business context, or role requirements and we&apos;ll respond personally.
-                      </p>
-                    </div>
-                    <div className="rounded-3xl border border-slate-200 bg-slate-50 px-5 py-5">
-                      <div className="text-xs font-semibold uppercase tracking-[0.24em] text-emerald-700">Primary Contact</div>
-                      <a href="mailto:hello@credencetalent.com" className="mt-3 block text-lg font-semibold text-slate-950 hover:text-emerald-700">
-                        hello@credencetalent.com
-                      </a>
-                      <p className="mt-2 text-sm leading-7 text-slate-600">
-                        Best for retained search discussions, hiring plans, role briefs, and partnership conversations.
-                      </p>
-                    </div>
-                    <div className="grid gap-4 sm:grid-cols-2">
-                      <div className="rounded-3xl border border-slate-200 px-5 py-5">
-                        <div className="font-display text-2xl font-semibold text-slate-950">What to include</div>
-                        <p className="mt-2 text-sm leading-7 text-slate-600">
-                          Team context, role scope, location, hiring timeline, and any specific technical or leadership requirements.
-                        </p>
-                      </div>
-                      <div className="rounded-3xl border border-slate-200 px-5 py-5">
-                        <div className="font-display text-2xl font-semibold text-slate-950">Typical support</div>
-                        <p className="mt-2 text-sm leading-7 text-slate-600">
-                          Executive search, engineering hiring, market mapping, and strategic support for scaling teams across regions.
-                        </p>
-                      </div>
-                    </div>
-                    <div className="flex flex-wrap gap-4">
-                      <a
-                        href="mailto:hello@credencetalent.com?subject=Hiring%20Inquiry"
-                        className="inline-flex items-center rounded-2xl bg-slate-950 px-6 py-3 text-sm font-medium text-white transition hover:bg-slate-800"
-                      >
-                        Email Credence Talent
-                      </a>
-                      <a
-                        href="#services"
-                        className="inline-flex items-center rounded-2xl border border-slate-300 bg-white px-6 py-3 text-sm font-medium text-slate-700 transition hover:bg-slate-50"
-                      >
-                        Review Services
-                      </a>
-                    </div>
+                  <div>
+                    <div className="font-display text-3xl font-semibold text-slate-950">Start the conversation directly</div>
+                    <p className="mt-3 text-sm leading-7 text-slate-600">
+                      Share your hiring brief, business context, role scope, and timeline. We&apos;ll review the inquiry and respond directly.
+                    </p>
+                  </div>
+                  <div className="mt-8">
+                    <ContactForm />
                   </div>
                 </Card>
               </div>
