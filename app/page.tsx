@@ -1,6 +1,7 @@
 'use client';
 
 import { FormEvent, useState } from 'react';
+import Link from 'next/link';
 import { motion } from 'framer-motion';
 import {
   ArrowRight,
@@ -18,6 +19,7 @@ import {
   Sparkles,
   Users2,
 } from 'lucide-react';
+import { sectorPages } from '@/lib/sectors';
 
 const stats = [
   { value: 'Global', label: 'Market positioning' },
@@ -51,17 +53,6 @@ const services = [
     description:
       'Beyond filling roles, we act as a long-term hiring partner, supporting workforce planning, role definition, and scaling strategies for growing organizations.',
   },
-];
-
-const sectors = [
-  'Technology',
-  'Cloud & Infrastructure',
-  'Digital Transformation',
-  'Fintech',
-  'Cybersecurity',
-  'Data & AI',
-  'Product & Engineering',
-  'Global Shared Services',
 ];
 
 const differentiators = [
@@ -305,7 +296,7 @@ export default function Page() {
 
           <nav className="hidden items-center gap-7 text-sm text-slate-600 lg:flex">
             <a href="#services" className="transition hover:text-slate-950">Services</a>
-            <a href="#sectors" className="transition hover:text-slate-950">Sectors</a>
+            <Link href="/sectors" className="transition hover:text-slate-950">Sectors</Link>
             <a href="#about" className="transition hover:text-slate-950">Expertise</a>
             <a href="#process" className="transition hover:text-slate-950">Process</a>
             <a href="#insights" className="transition hover:text-slate-950">Insights</a>
@@ -469,11 +460,25 @@ export default function Page() {
                   </p>
                 </div>
                 <div className="grid gap-4 sm:grid-cols-2">
-                  {sectors.map((sector) => (
-                    <div key={sector} className="rounded-3xl border border-white/10 bg-white/5 px-5 py-5 text-sm text-slate-200 backdrop-blur-sm">
-                      {sector}
-                    </div>
+                  {sectorPages.map((sector) => (
+                    <Link
+                      key={sector.slug}
+                      href={`/sectors/${sector.slug}`}
+                      className="rounded-3xl border border-white/10 bg-white/5 px-5 py-5 text-sm text-slate-200 backdrop-blur-sm transition hover:border-emerald-300/40 hover:bg-white/10"
+                    >
+                      <div className="font-semibold text-white">{sector.label}</div>
+                      <div className="mt-2 text-slate-300">{sector.summary}</div>
+                    </Link>
                   ))}
+                </div>
+                <div className="lg:col-span-2">
+                  <Link
+                    href="/sectors"
+                    className="inline-flex items-center rounded-2xl border border-white/15 bg-white/10 px-6 py-3 text-sm font-medium text-white transition hover:bg-white/15"
+                  >
+                    View All Sector Pages
+                    <ArrowRight className="ml-2 h-4 w-4" />
+                  </Link>
                 </div>
               </div>
             </div>
