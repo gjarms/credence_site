@@ -371,31 +371,43 @@ export default function Page() {
             </motion.div>
 
             <motion.div initial={{ opacity: 0, y: 24 }} animate={{ opacity: 1, y: 0 }} transition={{ duration: 0.7, delay: 0.1 }} className="grid gap-5">
-              <Card className="rounded-[2rem] border border-slate-200 bg-white p-8 shadow-xl shadow-slate-200/70">
-                <div className="flex items-center justify-between">
-                  <div>
-                    <div className="text-sm font-medium text-slate-500">Why Credence Talent</div>
-                    <div className="font-display mt-2 text-3xl font-semibold tracking-tight text-slate-950">A premium, trust-first search partner</div>
-                  </div>
-                  <div className="rounded-2xl bg-emerald-50 p-3 text-emerald-700">
-                    <BadgeCheck className="h-6 w-6" />
+              <Card className="overflow-hidden rounded-[2rem] border border-slate-200 bg-white shadow-xl shadow-slate-200/70">
+                <div className="relative">
+                  <img
+                    src="/sectors/photos/leadership-search.jpg"
+                    alt="Executive search and leadership hiring"
+                    className="h-[280px] w-full object-cover"
+                  />
+                  <div className="absolute inset-0 bg-gradient-to-t from-slate-950/75 via-slate-950/30 to-transparent" />
+                  <div className="absolute bottom-0 left-0 right-0 p-8 text-white">
+                    <div className="flex items-center justify-between gap-4">
+                      <div>
+                        <div className="text-sm font-medium text-emerald-200">Why Credence Talent</div>
+                        <div className="font-display mt-2 text-3xl font-semibold tracking-tight">A premium, trust-first search partner</div>
+                      </div>
+                      <div className="rounded-2xl bg-white/10 p-3 text-emerald-200 backdrop-blur-sm">
+                        <BadgeCheck className="h-6 w-6" />
+                      </div>
+                    </div>
                   </div>
                 </div>
-                <p className="mt-5 text-sm leading-7 text-slate-600">
-                  Credence Talent supports critical hiring mandates with a more focused, high-touch search process. We combine technical understanding, clear communication, and disciplined market mapping to deliver stronger shortlists for leadership and specialist roles.
-                </p>
-                <div className="mt-6 grid gap-3">
-                  {[
-                    'Executive and specialist technology search',
-                    'Global-market hiring support',
-                    'High-credibility candidate engagement',
-                    'Relationship-led, premium delivery',
-                  ].map((item) => (
-                    <div key={item} className="flex items-start gap-3 rounded-2xl border border-slate-100 bg-slate-50/70 px-4 py-3 text-sm text-slate-700">
-                      <BadgeCheck className="mt-0.5 h-4 w-4 shrink-0 text-emerald-700" />
-                      <span>{item}</span>
-                    </div>
-                  ))}
+                <div className="p-8">
+                  <p className="text-sm leading-7 text-slate-600">
+                    Credence Talent supports critical hiring mandates with a more focused, high-touch search process. We combine technical understanding, clear communication, and disciplined market mapping to deliver stronger shortlists for leadership and specialist roles.
+                  </p>
+                  <div className="mt-6 grid gap-3 sm:grid-cols-2">
+                    {[
+                      'Executive and specialist technology search',
+                      'Global-market hiring support',
+                      'High-credibility candidate engagement',
+                      'Relationship-led, premium delivery',
+                    ].map((item) => (
+                      <div key={item} className="flex items-start gap-3 rounded-2xl border border-slate-100 bg-slate-50/70 px-4 py-3 text-sm text-slate-700">
+                        <BadgeCheck className="mt-0.5 h-4 w-4 shrink-0 text-emerald-700" />
+                        <span>{item}</span>
+                      </div>
+                    ))}
+                  </div>
                 </div>
               </Card>
 
