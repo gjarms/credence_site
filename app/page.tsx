@@ -135,20 +135,28 @@ const proofBlocks = [
 
 const faqs = [
   {
-    q: 'What roles do you specialize in?',
-    a: 'We specialize in leadership and high-impact technical roles across the SDLC, including software engineering, cloud, DevOps, SRE, platform, security, data, QA, and infrastructure.',
+    q: 'What kinds of roles do you support best?',
+    a: 'We work best on leadership and specialist mandates across Engineering, Cloud, Platform, Infrastructure, Security, Data, Product, Delivery, and adjacent technical functions where role clarity and candidate quality matter.',
   },
   {
-    q: 'Do you support global hiring?',
-    a: 'Yes. We help companies hire across the US, India, Europe, and remote-first environments, ensuring both technical fit and cultural alignment.',
+    q: 'Do you support permanent, contract, and RPO hiring models?',
+    a: 'Yes. We support permanent hiring, Contract / C2C mandates, and more embedded RPO-style recruitment support depending on the pace, structure, and complexity of the hiring need.',
   },
   {
-    q: 'How are you different from other recruitment agencies?',
-    a: 'Our background in technology and infrastructure allows us to understand roles deeply. We focus on quality, trust, and long-term partnerships rather than transactional hiring.',
+    q: 'Can you support international or multi-region hiring?',
+    a: 'Yes. We support hiring across North America, Europe, India, LATAM, and remote markets, helping clients balance capability, communication quality, and long-term fit across regions.',
   },
   {
-    q: 'Do you work with startups or enterprises?',
-    a: 'Both. We support early-stage startups building core teams as well as established enterprises scaling specialized functions.',
+    q: 'How are you different from a generalist recruitment agency?',
+    a: 'Our work is designed for higher-trust searches where technical understanding, stronger market representation, and a more disciplined shortlist matter more than raw candidate volume.',
+  },
+  {
+    q: 'What happens after the shortlist stage?',
+    a: 'We stay involved through interview flow, candidate engagement, offer strategy, final negotiations, onboarding support, and post-join follow-up so the search is carried through properly to the close.',
+  },
+  {
+    q: 'What kinds of companies do you work best with?',
+    a: 'We work well with founder-led businesses, scaling companies, and established organizations hiring into important leadership or specialist roles where quality, communication, and credibility are central.',
   },
 ];
 
@@ -461,21 +469,21 @@ export default function Page() {
           <div className="mx-auto max-w-7xl px-6 lg:px-8">
             <div className="grid gap-5 md:grid-cols-3">
               <Card className="rounded-[2rem] border border-slate-200 bg-white p-6 shadow-sm">
-                <div className="font-display text-4xl font-semibold tracking-tight text-slate-950">20+ years</div>
+                <div className="font-display text-4xl font-semibold tracking-tight text-slate-950">20+ Years of Experience</div>
                 <p className="mt-2 text-sm leading-7 text-slate-600">
-                  Deep experience across enterprise technology, infrastructure, and modern software delivery environments.
+                  Experience shaped across enterprise technology, infrastructure, and modern software delivery environments where hiring quality directly affects execution.
                 </p>
               </Card>
               <Card className="rounded-[2rem] border border-slate-200 bg-white p-6 shadow-sm">
-                <div className="font-display text-4xl font-semibold tracking-tight text-slate-950">Enterprise to startup</div>
+                <div className="font-display text-4xl font-semibold tracking-tight text-slate-950">Enterprise to Growth-Stage</div>
                 <p className="mt-2 text-sm leading-7 text-slate-600">
-                  Perspective shaped by both large-scale organizations and fast-moving growth environments.
+                  Perspective built across large-scale organizations and fast-moving growth environments, with a clear understanding of how hiring priorities change by stage.
                 </p>
               </Card>
               <Card className="rounded-[2rem] border border-slate-200 bg-white p-6 shadow-sm">
-                <div className="font-display text-4xl font-semibold tracking-tight text-slate-950">SDLC + cloud expertise</div>
+                <div className="font-display text-4xl font-semibold tracking-tight text-slate-950">Engineering, Cloud & Platform</div>
                 <p className="mt-2 text-sm leading-7 text-slate-600">
-                  Strong familiarity with software engineering, cloud platforms, infrastructure, security, DevOps, and platform teams.
+                  Strong familiarity with software engineering, cloud platforms, infrastructure, security, DevOps, and platform teams, helping us assess roles with greater context.
                 </p>
               </Card>
             </div>
@@ -719,8 +727,8 @@ export default function Page() {
 
         <section id="contact" className="py-20">
           <div className="mx-auto max-w-7xl px-6 lg:px-8">
-            <div className="relative overflow-hidden rounded-[2.5rem] bg-gradient-to-br from-slate-950 via-slate-900 to-emerald-950 px-6 py-12 text-white shadow-xl lg:px-10">
-              <div className="absolute inset-0 opacity-20 [background-image:radial-gradient(circle_at_20%_20%,white,transparent_18%),radial-gradient(circle_at_80%_30%,white,transparent_14%),radial-gradient(circle_at_60%_70%,white,transparent_12%)]" />
+            <div className="relative overflow-hidden rounded-[2.5rem] bg-slate-950 px-6 py-12 text-white shadow-xl lg:px-10">
+              <div className="absolute inset-0 bg-[radial-gradient(circle_at_top_right,rgba(16,185,129,0.16),transparent_26%),radial-gradient(circle_at_bottom_left,rgba(148,163,184,0.12),transparent_24%)]" />
               <div className="relative grid gap-10 lg:grid-cols-[0.8fr_1.2fr]">
                 <div>
                   <div className="text-xs font-semibold uppercase tracking-[0.3em] text-emerald-300">Contact</div>
@@ -732,7 +740,7 @@ export default function Page() {
                   </p>
                   <div className="mt-8 grid gap-4 text-sm text-slate-300">
                     <div className="flex items-center gap-3"><Mail className="h-4 w-4 text-emerald-300" /> hradmin@credencetalent.com</div>
-                    <div className="flex items-center gap-3"><MapPin className="h-4 w-4 text-emerald-300" /> Global recruitment brand with international positioning</div>
+                    <div className="flex items-center gap-3"><MapPin className="h-4 w-4 text-emerald-300" /> Supporting hiring across North America, Europe, India, and LATAM</div>
                   </div>
                 </div>
 
