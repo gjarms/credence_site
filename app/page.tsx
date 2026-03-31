@@ -374,14 +374,14 @@ export default function Page() {
                   </div>
                 </div>
                 <p className="mt-5 text-sm leading-7 text-slate-600">
-                  Our brand is designed to feel credible, international, and high-touch. The result is a website that positions Credence Talent as a refined boutique agency with modern execution and strong client appeal.
+                  Credence Talent supports critical hiring mandates with a more focused, high-touch search process. We combine technical understanding, clear communication, and disciplined market mapping to deliver stronger shortlists for leadership and specialist roles.
                 </p>
                 <div className="mt-6 grid gap-3">
                   {[
                     'Executive and specialist technology search',
-                    'Global-market brand positioning',
-                    'Elegant, modern candidate-facing experience',
-                    'Relationship-led, premium service delivery',
+                    'Global-market hiring support',
+                    'High-credibility candidate engagement',
+                    'Relationship-led, premium delivery',
                   ].map((item) => (
                     <div key={item} className="flex items-start gap-3 rounded-2xl border border-slate-100 bg-slate-50/70 px-4 py-3 text-sm text-slate-700">
                       <BadgeCheck className="mt-0.5 h-4 w-4 shrink-0 text-emerald-700" />
@@ -412,11 +412,48 @@ export default function Page() {
         </section>
 
         <section className="border-y border-slate-200 bg-white/80">
-          <div className="mx-auto grid max-w-7xl gap-6 px-6 py-8 text-sm text-slate-500 md:grid-cols-4 lg:px-8">
-            <div className="flex items-center gap-3"><Building2 className="h-4 w-4" /> Boutique recruitment model</div>
-            <div className="flex items-center gap-3"><Users2 className="h-4 w-4" /> Client and candidate-first experience</div>
-            <div className="flex items-center gap-3"><Clock3 className="h-4 w-4" /> Structured, timely search execution</div>
-            <div className="flex items-center gap-3"><ShieldCheck className="h-4 w-4" /> Credibility at every touchpoint</div>
+          <div className="mx-auto max-w-7xl px-6 py-12 lg:px-8">
+            <div className="grid gap-5 md:grid-cols-2 xl:grid-cols-4">
+              {[
+                {
+                  icon: Building2,
+                  title: 'Boutique Model',
+                  text: 'A focused search approach with higher attention on role quality, communication, and fit.',
+                },
+                {
+                  icon: Users2,
+                  title: 'Client + Candidate First',
+                  text: 'A process designed to protect the client brand while creating a better candidate experience.',
+                },
+                {
+                  icon: Clock3,
+                  title: 'Structured Execution',
+                  text: 'Clear process design, disciplined follow-through, and timely search movement from brief to close.',
+                },
+                {
+                  icon: ShieldCheck,
+                  title: 'Credibility Throughout',
+                  text: 'Thoughtful market representation at every touchpoint, especially for leadership and specialist roles.',
+                },
+              ].map((item) => {
+                const Icon = item.icon;
+
+                return (
+                  <Card
+                    key={item.title}
+                    className="rounded-[1.75rem] border border-slate-200 bg-white p-6 shadow-sm"
+                  >
+                    <div className="inline-flex rounded-2xl bg-emerald-50 p-3 text-emerald-700">
+                      <Icon className="h-5 w-5" />
+                    </div>
+                    <div className="font-display mt-5 text-2xl font-semibold text-slate-950">
+                      {item.title}
+                    </div>
+                    <p className="mt-3 text-sm leading-7 text-slate-600">{item.text}</p>
+                  </Card>
+                );
+              })}
+            </div>
           </div>
         </section>
 
