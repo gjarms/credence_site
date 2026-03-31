@@ -420,8 +420,17 @@ export default function Page() {
         </section>
 
         <section className="border-y border-slate-200 bg-white/80">
-          <div className="mx-auto max-w-7xl px-6 py-12 lg:px-8">
-            <div className="grid gap-5 md:grid-cols-2 xl:grid-cols-4">
+          <div className="mx-auto max-w-7xl px-6 py-16 lg:px-8">
+            <div className="max-w-3xl">
+              <div className="text-xs font-semibold uppercase tracking-[0.3em] text-emerald-700">Operating Principles</div>
+              <h2 className="font-display mt-4 text-3xl font-semibold tracking-tight text-slate-950 sm:text-4xl">
+                The standards behind each search mandate
+              </h2>
+              <p className="mt-5 text-lg leading-8 text-slate-600">
+                These are the principles that shape how we represent clients, engage candidates, and move a search from briefing through close.
+              </p>
+            </div>
+            <div className="mt-12 grid gap-5 md:grid-cols-2 xl:grid-cols-4">
               {[
                 {
                   icon: Building2,
@@ -465,9 +474,18 @@ export default function Page() {
           </div>
         </section>
 
-        <section className="bg-slate-50/80 py-10">
+        <section className="bg-slate-50/80 py-16">
           <div className="mx-auto max-w-7xl px-6 lg:px-8">
-            <div className="grid gap-5 md:grid-cols-3">
+            <div className="max-w-3xl">
+              <div className="text-xs font-semibold uppercase tracking-[0.3em] text-emerald-700">Experience Snapshot</div>
+              <h2 className="font-display mt-4 text-3xl font-semibold tracking-tight text-slate-950 sm:text-4xl">
+                Technical context and search judgment built over time
+              </h2>
+              <p className="mt-5 text-lg leading-8 text-slate-600">
+                This background informs how we assess specialist roles, calibrate shortlists, and support hiring decisions across different business stages.
+              </p>
+            </div>
+            <div className="mt-12 grid gap-5 md:grid-cols-3">
               <Card className="rounded-[2rem] border border-slate-200 bg-white p-6 shadow-sm">
                 <div className="font-display text-4xl font-semibold tracking-tight text-slate-950">20+ Years of Experience</div>
                 <p className="mt-2 text-sm leading-7 text-slate-600">
@@ -691,7 +709,12 @@ export default function Page() {
         </section>
 
         <section className="mx-auto max-w-7xl px-6 py-24 lg:px-8">
-          <div className="grid gap-6 lg:grid-cols-[0.85fr_1.15fr]">
+          <SectionHeading
+            eyebrow="Candidate Experience"
+            title="How the search feels to the market matters"
+            description="This part of the process shapes candidate confidence, client reputation, and the overall quality of engagement during a critical hire."
+          />
+          <div className="mt-14 grid gap-10 lg:grid-cols-[0.85fr_1.15fr]">
             <Card className="rounded-[2rem] border border-slate-200 bg-slate-950 p-10 text-white shadow-xl">
               <div className="text-xs font-semibold uppercase tracking-[0.3em] text-emerald-300">Candidate Experience</div>
               <h3 className="font-display mt-4 text-4xl font-semibold tracking-tight">Professional representation matters</h3>
@@ -714,13 +737,24 @@ export default function Page() {
                 ))}
               </div>
             </Card>
-            <div className="grid gap-5">
+            <div>
+              <div className="max-w-2xl">
+                <div className="text-xs font-semibold uppercase tracking-[0.3em] text-emerald-700">Client Questions</div>
+                <h3 className="font-display mt-4 text-3xl font-semibold tracking-tight text-slate-950 sm:text-4xl">
+                  Practical answers for buyers evaluating the search partner
+                </h3>
+                <p className="mt-5 text-lg leading-8 text-slate-600">
+                  These are the questions clients typically ask when they want to understand fit, delivery model, and how involved we stay throughout the search.
+                </p>
+              </div>
+              <div className="mt-8 grid gap-5">
               {faqs.map((item) => (
                 <Card key={item.q} className="rounded-[2rem] border border-slate-200 bg-white p-7 shadow-sm">
                   <div className="font-display text-2xl font-semibold text-slate-950">{item.q}</div>
                   <p className="mt-3 text-sm leading-7 text-slate-600">{item.a}</p>
                 </Card>
               ))}
+              </div>
             </div>
           </div>
         </section>
@@ -735,13 +769,16 @@ export default function Page() {
                   <h2 className="font-display mt-4 text-3xl font-semibold tracking-tight sm:text-4xl lg:text-5xl">
                     Ready to hire the right talent with confidence?
                   </h2>
-                  <p className="mt-6 max-w-xl text-base leading-8 text-slate-300">
+                 <p className="mt-6 max-w-xl text-base leading-8 text-slate-300">
                     Whether you&apos;re hiring your first key engineer or scaling a global team, we&apos;re here to help. Let&apos;s discuss your hiring needs and how we can support your growth.
                   </p>
                   <div className="mt-8 grid gap-4 text-sm text-slate-300">
                     <div className="flex items-center gap-3"><Mail className="h-4 w-4 text-emerald-300" /> hradmin@credencetalent.com</div>
                     <div className="flex items-center gap-3"><MapPin className="h-4 w-4 text-emerald-300" /> Supporting hiring across North America, Europe, India, and LATAM</div>
                   </div>
+                  <p className="mt-8 max-w-xl text-sm leading-7 text-slate-400">
+                    All inquiries are handled confidentially. Share as much context as you need, and we&apos;ll respond directly after reviewing the brief.
+                  </p>
                 </div>
 
                 <Card className="rounded-[2rem] border border-white/10 bg-white/95 p-8 text-slate-900 shadow-2xl sm:p-10">
@@ -775,8 +812,12 @@ export default function Page() {
             <div className="font-display text-2xl font-semibold text-slate-950">Navigation</div>
             <div className="mt-4 grid gap-3 text-slate-600">
               <a href="#services" className="transition hover:text-slate-950">Services</a>
+              <Link href="/engagement-models" className="transition hover:text-slate-950">What We Do</Link>
+              <Link href="/sectors" className="transition hover:text-slate-950">Sectors</Link>
+              <Link href="/roles" className="transition hover:text-slate-950">Roles</Link>
               <a href="#about" className="transition hover:text-slate-950">Expertise</a>
               <a href="#process" className="transition hover:text-slate-950">Process</a>
+              <a href="#insights" className="transition hover:text-slate-950">Insights</a>
               <a href="#contact" className="transition hover:text-slate-950">Contact</a>
             </div>
           </div>
