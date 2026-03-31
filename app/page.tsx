@@ -565,6 +565,30 @@ export default function Page() {
                   <p className="mt-5 max-w-2xl text-lg leading-8 text-slate-300">
                     Credence Talent supports hiring across Engineering, Cloud, Infrastructure, Security, Digital Transformation, and growth-stage technology functions with a premium, focused positioning. We work across both Industry contexts and Core Technologies so clients can see the depth behind each search.
                   </p>
+                  <div className="mt-8 grid gap-3 sm:grid-cols-2">
+                    {[
+                      'Leadership and specialist mandates',
+                      'North America, Europe, India, and LATAM',
+                      'Industry context plus technical depth',
+                      'Dedicated pages for buyer review',
+                    ].map((item) => (
+                      <div
+                        key={item}
+                        className="rounded-2xl border border-white/10 bg-white/5 px-4 py-3 text-sm text-slate-200"
+                      >
+                        {item}
+                      </div>
+                    ))}
+                  </div>
+                  <div className="mt-8">
+                    <Link
+                      href="/sectors"
+                      className="inline-flex items-center rounded-2xl border border-white/15 bg-white/10 px-6 py-3 text-sm font-medium text-white transition hover:bg-white/15"
+                    >
+                      View All Sector Pages
+                      <ArrowRight className="ml-2 h-4 w-4" />
+                    </Link>
+                  </div>
                 </div>
                 <div className="grid gap-4 sm:grid-cols-2">
                   <div className="rounded-3xl border border-white/10 bg-white/5 p-5 backdrop-blur-sm sm:col-span-2">
@@ -602,18 +626,9 @@ export default function Page() {
                             <div className="font-semibold text-white">{sector.label}</div>
                             <div className="mt-2 text-slate-300">{sector.summary}</div>
                           </Link>
-                        ))}
+                      ))}
                     </div>
                   </div>
-                </div>
-                <div className="lg:col-span-2">
-                  <Link
-                    href="/sectors"
-                    className="inline-flex items-center rounded-2xl border border-white/15 bg-white/10 px-6 py-3 text-sm font-medium text-white transition hover:bg-white/15"
-                  >
-                    View All Sector Pages
-                    <ArrowRight className="ml-2 h-4 w-4" />
-                  </Link>
                 </div>
               </div>
             </div>
@@ -714,14 +729,14 @@ export default function Page() {
             title="How the search feels to the market matters"
             description="This part of the process shapes candidate confidence, client reputation, and the overall quality of engagement during a critical hire."
           />
-          <div className="mt-14 grid gap-10 lg:grid-cols-[0.85fr_1.15fr]">
+          <div className="mt-14 grid gap-8 lg:grid-cols-[0.9fr_1.1fr]">
             <Card className="rounded-[2rem] border border-slate-200 bg-slate-950 p-10 text-white shadow-xl">
               <div className="text-xs font-semibold uppercase tracking-[0.3em] text-emerald-300">Candidate Experience</div>
               <h3 className="font-display mt-4 text-4xl font-semibold tracking-tight">Professional representation matters</h3>
               <p className="mt-5 text-base leading-8 text-slate-300">
                 The strongest recruitment brands do more than fill jobs. They represent clients well in the market, communicate clearly, and create confidence throughout the process.
               </p>
-              <div className="mt-8 grid gap-4">
+              <div className="mt-8 grid gap-4 sm:grid-cols-2">
                 {[
                   'Thoughtful outreach that reflects your brand well in the market.',
                   'Clear communication that keeps candidates informed and engaged.',
@@ -736,18 +751,21 @@ export default function Page() {
                   </div>
                 ))}
               </div>
+              <div className="mt-6 rounded-2xl border border-white/10 bg-white/5 px-5 py-4 text-sm leading-7 text-slate-300">
+                Strong candidate experience protects your brand while helping the process hold momentum through interview, offer, and onboarding.
+              </div>
             </Card>
             <div>
               <div className="max-w-2xl">
                 <div className="text-xs font-semibold uppercase tracking-[0.3em] text-emerald-700">Client Questions</div>
-                <h3 className="font-display mt-4 text-3xl font-semibold tracking-tight text-slate-950 sm:text-4xl">
+                <h3 className="font-display mt-4 text-3xl font-semibold tracking-tight text-slate-950">
                   Practical answers for buyers evaluating the search partner
                 </h3>
-                <p className="mt-5 text-lg leading-8 text-slate-600">
+                <p className="mt-4 text-base leading-7 text-slate-600">
                   These are the questions clients typically ask when they want to understand fit, delivery model, and how involved we stay throughout the search.
                 </p>
               </div>
-              <div className="mt-8 grid gap-5">
+              <div className="mt-6 grid gap-4 xl:grid-cols-2">
               {faqs.map((item) => (
                 <Card key={item.q} className="rounded-[2rem] border border-slate-200 bg-white p-7 shadow-sm">
                   <div className="font-display text-2xl font-semibold text-slate-950">{item.q}</div>
