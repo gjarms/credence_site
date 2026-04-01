@@ -13,14 +13,14 @@ import {
 import PrintButton from './print-button';
 
 export const metadata: Metadata = {
-  title: 'Client Portfolio',
+  title: 'Capabilities Portfolio',
   description:
     'A client-facing one-page portfolio for Credence Talent covering engagement models, sector coverage, search process, and differentiators.',
   alternates: {
     canonical: '/portfolio',
   },
   openGraph: {
-    title: 'Client Portfolio | Credence Talent',
+    title: 'Capabilities Portfolio | Credence Talent',
     description:
       'A client-facing one-page portfolio for Credence Talent covering engagement models, sector coverage, search process, and differentiators.',
     url: '/portfolio',
@@ -28,7 +28,7 @@ export const metadata: Metadata = {
   },
   twitter: {
     card: 'summary_large_image',
-    title: 'Client Portfolio | Credence Talent',
+    title: 'Capabilities Portfolio | Credence Talent',
     description:
       'A client-facing one-page portfolio for Credence Talent covering engagement models, sector coverage, search process, and differentiators.',
     images: ['/credence-logo-backup.png'],
@@ -106,11 +106,11 @@ export default function PortfolioPage() {
       </div>
 
       <div className="print-shell mx-auto max-w-5xl overflow-hidden rounded-[2.5rem] border border-slate-200 bg-white shadow-2xl shadow-slate-200/80">
-        <section className="border-b border-slate-200 bg-slate-950 px-8 py-10 text-white sm:px-10">
+        <section className="print-avoid-break print-preserve-surface border-b border-slate-200 bg-slate-950 px-8 py-10 text-white sm:px-10">
           <div className="grid gap-8 lg:grid-cols-[1.15fr_0.85fr]">
             <div>
               <div className="text-xs font-semibold uppercase tracking-[0.32em] text-emerald-300">
-                Client Portfolio
+                Capabilities Overview
               </div>
               <h1 className="font-display mt-4 text-4xl font-semibold tracking-tight sm:text-5xl">
                 Trusted search for companies that want to hire with confidence.
@@ -145,7 +145,7 @@ export default function PortfolioPage() {
         </section>
 
         <section className="grid gap-0 lg:grid-cols-[1.05fr_0.95fr]">
-          <div className="border-b border-slate-200 px-8 py-8 sm:px-10 lg:border-b-0 lg:border-r">
+          <div className="print-avoid-break border-b border-slate-200 px-8 py-8 sm:px-10 lg:border-b-0 lg:border-r">
             <div className="text-xs font-semibold uppercase tracking-[0.3em] text-emerald-700">
               What We Do
             </div>
@@ -153,7 +153,7 @@ export default function PortfolioPage() {
               {engagementModels.map((item) => {
                 const Icon = item.icon;
                 return (
-                  <div key={item.title} className="rounded-[1.75rem] border border-slate-200 bg-slate-50/70 p-5">
+                  <div key={item.title} className="print-avoid-break rounded-[1.75rem] border border-slate-200 bg-slate-50/70 p-5">
                     <div className="flex items-start gap-4">
                       <div className="rounded-2xl bg-emerald-50 p-3 text-emerald-700">
                         <Icon className="h-5 w-5" />
@@ -171,12 +171,12 @@ export default function PortfolioPage() {
             </div>
           </div>
 
-          <div className="px-8 py-8 sm:px-10">
+          <div className="print-avoid-break px-8 py-8 sm:px-10">
             <div className="text-xs font-semibold uppercase tracking-[0.3em] text-emerald-700">
-              Coverage
+              Sector & Role Coverage
             </div>
             <div className="mt-6 grid gap-6">
-              <div className="rounded-[1.75rem] border border-slate-200 bg-white p-5">
+              <div className="print-avoid-break rounded-[1.75rem] border border-slate-200 bg-white p-5">
                 <h2 className="font-display text-2xl font-semibold tracking-tight text-slate-950">
                   Core Search Coverage
                 </h2>
@@ -190,7 +190,7 @@ export default function PortfolioPage() {
                 </div>
               </div>
 
-              <div className="rounded-[1.75rem] border border-slate-200 bg-white p-5">
+              <div className="print-avoid-break rounded-[1.75rem] border border-slate-200 bg-white p-5">
                 <h2 className="font-display text-2xl font-semibold tracking-tight text-slate-950">
                   Roles We Cover
                 </h2>
@@ -207,7 +207,7 @@ export default function PortfolioPage() {
           </div>
         </section>
 
-        <section className="border-y border-slate-200 bg-slate-50/70 px-8 py-8 sm:px-10">
+        <section className="print-avoid-break border-y border-slate-200 bg-slate-50/70 px-8 py-8 sm:px-10">
           <div className="grid gap-8 lg:grid-cols-[0.9fr_1.1fr]">
             <div>
               <div className="text-xs font-semibold uppercase tracking-[0.3em] text-emerald-700">
@@ -223,7 +223,7 @@ export default function PortfolioPage() {
             </div>
             <div className="grid gap-4 sm:grid-cols-2">
               {process.map((item, index) => (
-                <div key={item} className="rounded-[1.75rem] border border-slate-200 bg-white p-5">
+                <div key={item} className="print-avoid-break rounded-[1.75rem] border border-slate-200 bg-white p-5">
                   <div className="text-sm font-semibold tracking-[0.24em] text-emerald-700">
                     0{index + 1}
                   </div>
@@ -235,13 +235,13 @@ export default function PortfolioPage() {
         </section>
 
         <section className="grid gap-0 lg:grid-cols-[1fr_1fr]">
-          <div className="border-b border-slate-200 px-8 py-8 sm:px-10 lg:border-b-0 lg:border-r">
+          <div className="print-avoid-break border-b border-slate-200 px-8 py-8 sm:px-10 lg:border-b-0 lg:border-r">
             <div className="text-xs font-semibold uppercase tracking-[0.3em] text-emerald-700">
               Why Credence
             </div>
             <div className="mt-6 grid gap-3">
               {differentiators.map((item) => (
-                <div key={item} className="flex items-start gap-3 rounded-2xl border border-slate-200 bg-slate-50/60 px-4 py-3 text-sm leading-7 text-slate-700">
+                <div key={item} className="print-avoid-break flex items-start gap-3 rounded-2xl border border-slate-200 bg-slate-50/60 px-4 py-3 text-sm leading-7 text-slate-700">
                   <BadgeCheck className="mt-1 h-4 w-4 shrink-0 text-emerald-700" />
                   <span>{item}</span>
                 </div>
@@ -249,7 +249,7 @@ export default function PortfolioPage() {
             </div>
           </div>
 
-          <div className="px-8 py-8 sm:px-10">
+          <div className="print-avoid-break px-8 py-8 sm:px-10">
             <div className="text-xs font-semibold uppercase tracking-[0.3em] text-emerald-700">
               Contact
             </div>
@@ -261,9 +261,13 @@ export default function PortfolioPage() {
               established organizations hiring into important leadership or specialist roles where
               quality, credibility, and long-term fit matter.
             </p>
-            <div className="mt-6 rounded-[1.75rem] border border-slate-200 bg-slate-950 p-6 text-white">
+            <div className="print-avoid-break print-preserve-surface mt-6 rounded-[1.75rem] border border-slate-200 bg-slate-950 p-6 text-white">
               <div className="font-display text-2xl font-semibold">Credence Talent</div>
               <div className="mt-4 space-y-2 text-sm leading-7 text-slate-300">
+                <div className="pb-2 text-white">
+                  <div className="font-medium">Muthupandi</div>
+                  <div>Head of Operations - Strategic &amp; Business Development</div>
+                </div>
                 <div>hradmin@credencetalent.com</div>
                 <div>https://credencetalent.com</div>
                 <div>North America | Europe | India | LATAM</div>
