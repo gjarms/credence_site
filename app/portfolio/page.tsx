@@ -262,19 +262,46 @@ export default function PortfolioPage() {
               quality, credibility, and long-term fit matter.
             </p>
             <div className="print-avoid-break print-preserve-surface mt-6 rounded-[1.75rem] border border-slate-200 bg-slate-950 p-6 text-white">
-              <div className="font-display text-2xl font-semibold">Credence Talent</div>
-              <div className="mt-4 space-y-2 text-sm leading-7 text-slate-300">
-                <div className="pb-2 text-white">
-                  <div className="font-medium">Muthupandi</div>
+              <div className="flex items-center gap-4">
+                <img
+                  src="/credence-logo.svg"
+                  alt="Credence Talent"
+                  className="h-12 w-auto shrink-0"
+                />
+              </div>
+              <div className="mt-5 space-y-4 text-sm leading-7 text-slate-300">
+                <div className="text-white">
+                  <div className="font-medium text-base">Muthupandi</div>
                   <div>Head of Operations - Strategic &amp; Business Development</div>
                 </div>
-                <div>hradmin@credencetalent.com</div>
-                <div>https://credencetalent.com</div>
-                <div>North America | Europe | India | LATAM</div>
+                <div>
+                  <div className="text-xs font-semibold uppercase tracking-[0.22em] text-emerald-300">
+                    Direct
+                  </div>
+                  <div>muthupandi@credencetalent.com</div>
+                </div>
+                <div>
+                  <div className="text-xs font-semibold uppercase tracking-[0.22em] text-emerald-300">
+                    Support
+                  </div>
+                  <div>hradmin@credencetalent.com</div>
+                </div>
+                <div>
+                  <div className="text-xs font-semibold uppercase tracking-[0.22em] text-emerald-300">
+                    Web
+                  </div>
+                  <div>https://credencetalent.com</div>
+                </div>
+                <div>
+                  <div className="text-xs font-semibold uppercase tracking-[0.22em] text-emerald-300">
+                    Markets
+                  </div>
+                  <div>North America | Europe | India | LATAM</div>
+                </div>
               </div>
               <div className="mt-6 flex flex-wrap gap-3 print-hidden">
                 <a
-                  href="mailto:hradmin@credencetalent.com?subject=Client%20Portfolio%20Discussion"
+                  href="mailto:muthupandi@credencetalent.com?subject=Client%20Portfolio%20Discussion"
                   className="inline-flex items-center rounded-2xl bg-white px-5 py-3 text-sm font-medium text-slate-950 transition hover:bg-slate-100"
                 >
                   Discuss a Search
