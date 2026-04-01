@@ -40,3 +40,25 @@ button {
 button {
   cursor: pointer;
 }
+
+@media print {
+  html {
+    scroll-behavior: auto;
+  }
+
+  body {
+    background: #ffffff;
+  }
+
+  .print-hidden {
+    display: none !important;
+  }
+
+  .print-shell {
+    max-width: none !important;
+    margin: 0 !important;
+    border: 0 !important;
+    box-shadow: none !important;
+    border-radius: 0 !important;
+  }
+}
