@@ -42,12 +42,19 @@ button {
 }
 
 @media print {
+  @page {
+    size: A4;
+    margin: 12mm;
+  }
+
   html {
     scroll-behavior: auto;
   }
 
   body {
     background: #ffffff;
+    -webkit-print-color-adjust: exact;
+    print-color-adjust: exact;
   }
 
   .print-hidden {
@@ -60,5 +67,43 @@ button {
     border: 0 !important;
     box-shadow: none !important;
     border-radius: 0 !important;
+    overflow: visible !important;
+  }
+
+  .print-avoid-break {
+    break-inside: avoid;
+    page-break-inside: avoid;
+  }
+
+  .print-preserve-surface {
+    -webkit-print-color-adjust: exact;
+    print-color-adjust: exact;
+  }
+
+  .print-preserve-surface,
+  .print-preserve-surface * {
+    -webkit-print-color-adjust: exact;
+    print-color-adjust: exact;
+  }
+
+  .portfolio-print-stack {
+    display: block !important;
+  }
+
+  .portfolio-print-stack > * {
+    width: 100% !important;
+    border-right: 0 !important;
+  }
+
+  .portfolio-print-stack > * + * {
+    border-top: 1px solid #e2e8f0 !important;
+  }
+
+  .portfolio-print-grid {
+    display: block !important;
+  }
+
+  .portfolio-print-grid > * + * {
+    margin-top: 1rem !important;
   }
 }

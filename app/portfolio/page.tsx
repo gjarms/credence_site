@@ -109,6 +109,16 @@ export default function PortfolioPage() {
         <section className="print-avoid-break print-preserve-surface border-b border-slate-200 bg-slate-950 px-8 py-10 text-white sm:px-10">
           <div className="grid gap-8 lg:grid-cols-[1.15fr_0.85fr]">
             <div>
+              <div className="mb-6 flex items-center gap-4">
+                <img
+                  src="/credence-logo.svg"
+                  alt="Credence Talent"
+                  className="h-14 w-auto shrink-0"
+                />
+                <div className="font-display text-3xl font-semibold tracking-tight text-white">
+                  Credence Talent
+                </div>
+              </div>
               <div className="text-xs font-semibold uppercase tracking-[0.32em] text-emerald-300">
                 Capabilities Overview
               </div>
@@ -144,12 +154,12 @@ export default function PortfolioPage() {
           </div>
         </section>
 
-        <section className="grid gap-0 lg:grid-cols-[1.05fr_0.95fr]">
+        <section className="portfolio-print-stack grid gap-0 lg:grid-cols-[1.05fr_0.95fr]">
           <div className="print-avoid-break border-b border-slate-200 px-8 py-8 sm:px-10 lg:border-b-0 lg:border-r">
             <div className="text-xs font-semibold uppercase tracking-[0.3em] text-emerald-700">
               What We Do
             </div>
-            <div className="mt-6 grid gap-5">
+            <div className="portfolio-print-grid mt-6 grid gap-5">
               {engagementModels.map((item) => {
                 const Icon = item.icon;
                 return (
@@ -175,7 +185,7 @@ export default function PortfolioPage() {
             <div className="text-xs font-semibold uppercase tracking-[0.3em] text-emerald-700">
               Sector & Role Coverage
             </div>
-            <div className="mt-6 grid gap-6">
+            <div className="portfolio-print-grid mt-6 grid gap-6">
               <div className="print-avoid-break rounded-[1.75rem] border border-slate-200 bg-white p-5">
                 <h2 className="font-display text-2xl font-semibold tracking-tight text-slate-950">
                   Core Search Coverage
@@ -208,7 +218,7 @@ export default function PortfolioPage() {
         </section>
 
         <section className="print-avoid-break border-y border-slate-200 bg-slate-50/70 px-8 py-8 sm:px-10">
-          <div className="grid gap-8 lg:grid-cols-[0.9fr_1.1fr]">
+          <div className="portfolio-print-stack grid gap-8 lg:grid-cols-[0.9fr_1.1fr]">
             <div>
               <div className="text-xs font-semibold uppercase tracking-[0.3em] text-emerald-700">
                 Search Process
@@ -221,7 +231,7 @@ export default function PortfolioPage() {
                 offer, onboarding, and post-join follow-up.
               </p>
             </div>
-            <div className="grid gap-4 sm:grid-cols-2">
+            <div className="portfolio-print-grid grid gap-4 sm:grid-cols-2">
               {process.map((item, index) => (
                 <div key={item} className="print-avoid-break rounded-[1.75rem] border border-slate-200 bg-white p-5">
                   <div className="text-sm font-semibold tracking-[0.24em] text-emerald-700">
@@ -234,7 +244,7 @@ export default function PortfolioPage() {
           </div>
         </section>
 
-        <section className="grid gap-0 lg:grid-cols-[1fr_1fr]">
+        <section className="portfolio-print-stack grid gap-0 lg:grid-cols-[1fr_1fr]">
           <div className="print-avoid-break border-b border-slate-200 px-8 py-8 sm:px-10 lg:border-b-0 lg:border-r">
             <div className="text-xs font-semibold uppercase tracking-[0.3em] text-emerald-700">
               Why Credence
@@ -262,13 +272,6 @@ export default function PortfolioPage() {
               quality, credibility, and long-term fit matter.
             </p>
             <div className="print-avoid-break print-preserve-surface mt-6 rounded-[1.75rem] border border-slate-200 bg-slate-950 p-6 text-white">
-              <div className="flex items-center gap-4">
-                <img
-                  src="/credence-logo.svg"
-                  alt="Credence Talent"
-                  className="h-12 w-auto shrink-0"
-                />
-              </div>
               <div className="mt-5 space-y-4 text-sm leading-7 text-slate-300">
                 <div className="text-white">
                   <div className="font-medium text-base">Muthupandi</div>
