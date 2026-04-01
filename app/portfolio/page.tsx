@@ -87,6 +87,12 @@ const differentiators = [
   'Candidate experience that reflects client standards',
 ];
 
+const idealFit = [
+  'Founder-led and growth-stage businesses making important hires',
+  'Technology-led teams building specialist capability',
+  'Enterprises hiring into cloud, infrastructure, security, and transformation roles',
+];
+
 export default function PortfolioPage() {
   return (
     <main className="min-h-screen bg-[#eef3f0] px-4 py-8 text-slate-900 sm:px-6 lg:px-8">
@@ -109,20 +115,14 @@ export default function PortfolioPage() {
         <section className="print-avoid-break print-preserve-surface border-b border-slate-200 bg-slate-950 px-8 py-10 text-white sm:px-10">
           <div className="grid gap-8 lg:grid-cols-[1.15fr_0.85fr]">
             <div>
-              <div className="mb-6 flex items-center gap-4">
+              <div className="mb-6">
                 <img
                   src="/credence-logo.svg"
                   alt="Credence Talent"
                   className="h-14 w-auto shrink-0"
                 />
-                <div className="font-display text-3xl font-semibold tracking-tight text-white">
-                  Credence Talent
-                </div>
               </div>
-              <div className="text-xs font-semibold uppercase tracking-[0.32em] text-emerald-300">
-                Capabilities Overview
-              </div>
-              <h1 className="font-display mt-4 text-4xl font-semibold tracking-tight sm:text-5xl">
+              <h1 className="font-display text-4xl font-semibold tracking-tight sm:text-5xl">
                 Trusted search for companies that want to hire with confidence.
               </h1>
               <p className="mt-5 max-w-3xl text-base leading-8 text-slate-300">
@@ -130,24 +130,67 @@ export default function PortfolioPage() {
                 hiring across Engineering, Cloud, Infrastructure, Security, Product, Delivery, Data,
                 AI, and global team-building mandates.
               </p>
+              <div className="mt-6 grid gap-4 sm:grid-cols-2">
+                <div className="rounded-[1.5rem] border border-white/10 bg-white/5 px-5 py-4">
+                  <div className="text-xs font-semibold uppercase tracking-[0.24em] text-emerald-300">
+                    What Clients Need
+                  </div>
+                  <div className="mt-3 text-sm leading-7 text-slate-200">
+                    Higher quality shortlists, stronger role calibration, and a search process that protects brand credibility.
+                  </div>
+                </div>
+                <div className="rounded-[1.5rem] border border-white/10 bg-white/5 px-5 py-4">
+                  <div className="text-xs font-semibold uppercase tracking-[0.24em] text-emerald-300">
+                    Search Context
+                  </div>
+                  <div className="mt-3 text-sm leading-7 text-slate-200">
+                    Leadership, Engineering, Cloud, Platform, Infrastructure, Security, Data, AI, Product, and Delivery hiring.
+                  </div>
+                </div>
+              </div>
             </div>
-            <div className="grid gap-4 self-start rounded-[2rem] border border-white/10 bg-white/5 p-6">
-              <div className="flex items-start gap-3">
-                <Layers3 className="mt-1 h-5 w-5 shrink-0 text-emerald-300" />
-                <div className="text-sm leading-7 text-slate-200">
-                  Higher quality shortlists for leadership and specialist roles
+            <div className="grid gap-4 self-start">
+              <div className="rounded-[2rem] border border-white/10 bg-white/5 p-6">
+                <div className="flex items-start gap-3">
+                  <Layers3 className="mt-1 h-5 w-5 shrink-0 text-emerald-300" />
+                  <div>
+                    <div className="text-xs font-semibold uppercase tracking-[0.24em] text-emerald-300">
+                      Search Value
+                    </div>
+                    <div className="mt-2 text-sm leading-7 text-slate-200">
+                      Higher quality shortlists for leadership and specialist roles, with clearer communication and stronger market representation.
+                    </div>
+                  </div>
                 </div>
               </div>
-              <div className="flex items-start gap-3">
-                <Globe2 className="mt-1 h-5 w-5 shrink-0 text-emerald-300" />
-                <div className="text-sm leading-7 text-slate-200">
-                  Support across North America, Europe, India, LATAM, and remote markets
+              <div className="rounded-[2rem] border border-white/10 bg-white/5 p-6">
+                <div className="flex items-start gap-3">
+                  <Globe2 className="mt-1 h-5 w-5 shrink-0 text-emerald-300" />
+                  <div>
+                    <div className="text-xs font-semibold uppercase tracking-[0.24em] text-emerald-300">
+                      Geographic Reach
+                    </div>
+                    <div className="mt-2 text-sm leading-7 text-slate-200">
+                      North America, Europe, India, LATAM, and remote markets for distributed or multi-region hiring.
+                    </div>
+                  </div>
                 </div>
               </div>
-              <div className="flex items-start gap-3">
-                <ShieldCheck className="mt-1 h-5 w-5 shrink-0 text-emerald-300" />
-                <div className="text-sm leading-7 text-slate-200">
-                  Candidate engagement designed to protect client brand and momentum
+              <div className="rounded-[2rem] border border-white/10 bg-white/5 p-6">
+                <div className="flex items-start gap-3">
+                  <ShieldCheck className="mt-1 h-5 w-5 shrink-0 text-emerald-300" />
+                  <div>
+                    <div className="text-xs font-semibold uppercase tracking-[0.24em] text-emerald-300">
+                      Best Fit
+                    </div>
+                    <div className="mt-2 grid gap-2">
+                      {idealFit.map((item) => (
+                        <div key={item} className="text-sm leading-7 text-slate-200">
+                          {item}
+                        </div>
+                      ))}
+                    </div>
+                  </div>
                 </div>
               </div>
             </div>
