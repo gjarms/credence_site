@@ -5,51 +5,74 @@ import {
   BadgeCheck,
   BriefcaseBusiness,
   Building2,
+  Clock3,
   Globe2,
   Handshake,
   Layers3,
+  Search,
   ShieldCheck,
+  Users2,
 } from 'lucide-react';
 import PrintButton from './print-button';
 
 export const metadata: Metadata = {
-  title: 'Capabilities Portfolio',
+  title: 'Corporate Profile',
   description:
-    'A client-facing one-page portfolio for Credence Talent covering engagement models, sector coverage, search process, and differentiators.',
+    'A multi-page corporate profile for Credence Talent covering positioning, service coverage, search process, engagement models, and client perspectives.',
   alternates: {
     canonical: '/portfolio',
   },
   openGraph: {
-    title: 'Capabilities Portfolio | Credence Talent',
+    title: 'Corporate Profile | Credence Talent',
     description:
-      'A client-facing one-page portfolio for Credence Talent covering engagement models, sector coverage, search process, and differentiators.',
+      'A multi-page corporate profile for Credence Talent covering positioning, service coverage, search process, engagement models, and client perspectives.',
     url: '/portfolio',
     images: ['/credence-logo-backup.png'],
   },
   twitter: {
     card: 'summary_large_image',
-    title: 'Capabilities Portfolio | Credence Talent',
+    title: 'Corporate Profile | Credence Talent',
     description:
-      'A client-facing one-page portfolio for Credence Talent covering engagement models, sector coverage, search process, and differentiators.',
+      'A multi-page corporate profile for Credence Talent covering positioning, service coverage, search process, engagement models, and client perspectives.',
     images: ['/credence-logo-backup.png'],
   },
 };
 
-const engagementModels = [
+const whyCredence = [
   {
-    icon: BriefcaseBusiness,
-    title: 'Permanent Hiring (FTE)',
-    text: 'Focused search support for full-time leadership and specialist roles where long-term fit, technical alignment, and stronger judgment are central.',
+    icon: Search,
+    title: 'Focused Search Discipline',
+    text: 'A calibrated search process built for critical roles where fit, credibility, and stronger judgment matter more than candidate volume.',
   },
   {
-    icon: Handshake,
-    title: 'Contract / C2C',
-    text: 'Flexible support for project-based delivery, specialist capability, and time-sensitive hiring where speed matters but standards still need to hold.',
+    icon: Layers3,
+    title: 'Specialist Technology Context',
+    text: 'Coverage across Engineering, Cloud, Platform, Infrastructure, Security, Product, Delivery, Data, AI, and transformation-focused mandates.',
   },
   {
-    icon: Building2,
-    title: 'RPO Support',
-    text: 'Embedded recruitment support for teams scaling across multiple roles or hiring programs that need structure, consistency, and continuity.',
+    icon: Clock3,
+    title: 'Clear Execution Rhythm',
+    text: 'Structured movement from briefing through close, with tighter communication, defined follow-through, and stronger control of interview momentum.',
+  },
+  {
+    icon: Users2,
+    title: 'Candidate Representation',
+    text: 'Thoughtful outreach and engagement that protects the client brand in the market and creates confidence with high-value candidates.',
+  },
+];
+
+const servicePages = [
+  {
+    title: 'Leadership & Executive Search',
+    text: 'Search support for leadership mandates across Engineering, Product, Technology, Operations, and business-critical functions where alignment, judgment, and market credibility are central.',
+  },
+  {
+    title: 'Technology & Engineering Hiring',
+    text: 'Specialist hiring across software engineering, architecture, QA, platform, DevOps, SRE, infrastructure, security, and adjacent technical functions.',
+  },
+  {
+    title: 'Global & Distributed Hiring',
+    text: 'Support for organizations hiring across North America, Europe, India, LATAM, and remote-first team structures where communication quality and regional fit matter.',
   },
 ];
 
@@ -87,11 +110,62 @@ const differentiators = [
   'Candidate experience that reflects client standards',
 ];
 
+const engagementModels = [
+  {
+    icon: BriefcaseBusiness,
+    title: 'Permanent Hiring (FTE)',
+    text: 'Focused search support for full-time leadership and specialist roles where long-term fit, technical alignment, and stronger judgment are central.',
+  },
+  {
+    icon: Handshake,
+    title: 'Contract / C2C',
+    text: 'Flexible support for project-based delivery, specialist capability, and time-sensitive hiring where speed matters but standards still need to hold.',
+  },
+  {
+    icon: Building2,
+    title: 'RPO Support',
+    text: 'Embedded recruitment support for teams scaling across multiple roles or hiring programs that need structure, consistency, and continuity.',
+  },
+];
+
 const idealFit = [
   'Founder-led and growth-stage businesses making important hires',
   'Technology-led teams building specialist capability',
   'Enterprises hiring into cloud, infrastructure, security, and transformation roles',
 ];
+
+const clientSpeak = [
+  {
+    quote:
+      'Credence brought much stronger role calibration than a typical agency process. The shortlist quality was noticeably better, and communication stayed sharp through every interview stage.',
+    attribution: 'Head of Engineering, high-growth technology company',
+  },
+  {
+    quote:
+      'What stood out was the way the search was represented in the market. Candidates came into the process well-informed, and that improved both engagement quality and close confidence.',
+    attribution: 'VP Talent, international software business',
+  },
+  {
+    quote:
+      'We needed a partner who understood infrastructure and cloud hiring without turning the search into a volume exercise. Credence handled the mandate with much better discipline.',
+    attribution: 'Director of Technology, enterprise transformation program',
+  },
+  {
+    quote:
+      'The process felt structured from briefing through offer. We had better visibility, stronger candidate alignment, and far less noise than we see in generalist recruitment models.',
+    attribution: 'Founder, product-led growth-stage company',
+  },
+];
+
+function PageSection({
+  className = '',
+  children,
+}: {
+  className?: string;
+  children: React.ReactNode;
+}) {
+  return <section className={`print-page-break print-avoid-break px-8 py-10 sm:px-10 ${className}`}>{children}</section>;
+}
 
 export default function PortfolioPage() {
   return (
@@ -112,25 +186,17 @@ export default function PortfolioPage() {
       </div>
 
       <div className="print-shell mx-auto max-w-5xl overflow-hidden rounded-[2.5rem] border border-slate-200 bg-white shadow-2xl shadow-slate-200/80">
-        <section className="print-avoid-break print-preserve-surface border-b border-slate-200 bg-slate-950 px-8 py-10 text-white sm:px-10">
-          <div className="grid gap-8 lg:grid-cols-[1.15fr_0.85fr]">
+        <section className="print-avoid-break print-preserve-surface border-b border-slate-200 bg-slate-950 px-8 py-12 text-white sm:px-10">
+          <div className="grid gap-10 lg:grid-cols-[1.1fr_0.9fr]">
             <div>
-              <div className="mb-6">
-                <img
-                  src="/credence-logo.svg"
-                  alt="Credence Talent"
-                  className="h-14 w-auto shrink-0"
-                />
-              </div>
-              <h1 className="font-display text-4xl font-semibold tracking-tight sm:text-5xl">
+              <img src="/credence-logo.svg" alt="Credence Talent" className="h-14 w-auto" />
+              <h1 className="font-display mt-8 text-4xl font-semibold tracking-tight sm:text-5xl">
                 Trusted search for companies that want to hire with confidence.
               </h1>
-              <p className="mt-5 max-w-3xl text-base leading-8 text-slate-300">
-                Credence Talent is a boutique recruitment partner supporting leadership and specialist
-                hiring across Engineering, Cloud, Infrastructure, Security, Product, Delivery, Data,
-                AI, and global team-building mandates.
+              <p className="mt-6 max-w-3xl text-base leading-8 text-slate-300">
+                Credence Talent is a boutique recruitment partner supporting leadership and specialist hiring across Engineering, Cloud, Infrastructure, Security, Product, Delivery, Data, AI, and global team-building mandates.
               </p>
-              <div className="mt-6 grid gap-4 sm:grid-cols-2">
+              <div className="mt-8 grid gap-4 sm:grid-cols-2">
                 <div className="rounded-[1.5rem] border border-white/10 bg-white/5 px-5 py-4">
                   <div className="text-xs font-semibold uppercase tracking-[0.24em] text-emerald-300">
                     What Clients Need
@@ -197,102 +263,98 @@ export default function PortfolioPage() {
           </div>
         </section>
 
-        <section className="portfolio-print-stack grid gap-0 lg:grid-cols-[1.05fr_0.95fr]">
-          <div className="print-avoid-break border-b border-slate-200 px-8 py-8 sm:px-10 lg:border-b-0 lg:border-r">
-            <div className="text-xs font-semibold uppercase tracking-[0.3em] text-emerald-700">
-              What We Do
-            </div>
-            <div className="portfolio-print-grid mt-6 grid gap-5">
-              {engagementModels.map((item) => {
-                const Icon = item.icon;
-                return (
-                  <div key={item.title} className="print-avoid-break rounded-[1.75rem] border border-slate-200 bg-slate-50/70 p-5">
-                    <div className="flex items-start gap-4">
-                      <div className="rounded-2xl bg-emerald-50 p-3 text-emerald-700">
-                        <Icon className="h-5 w-5" />
-                      </div>
-                      <div>
-                        <h2 className="font-display text-2xl font-semibold tracking-tight text-slate-950">
-                          {item.title}
-                        </h2>
-                        <p className="mt-2 text-sm leading-7 text-slate-600">{item.text}</p>
-                      </div>
-                    </div>
+        <PageSection>
+          <div className="max-w-3xl">
+            <div className="text-xs font-semibold uppercase tracking-[0.3em] text-emerald-700">Why Credence</div>
+            <h2 className="font-display mt-4 text-4xl font-semibold tracking-tight text-slate-950">
+              A search partner built for higher-trust hiring environments
+            </h2>
+            <p className="mt-4 text-base leading-8 text-slate-600">
+              Credence Talent is designed for clients who need more than sourcing support. We help shape the brief, calibrate the market, run a more disciplined process, and represent the opportunity well with leadership and specialist candidates.
+            </p>
+          </div>
+          <div className="mt-8 grid gap-5 md:grid-cols-2">
+            {whyCredence.map((item) => {
+              const Icon = item.icon;
+              return (
+                <div key={item.title} className="print-avoid-break rounded-[1.75rem] border border-slate-200 bg-slate-50/70 p-6">
+                  <div className="inline-flex rounded-2xl bg-emerald-50 p-3 text-emerald-700">
+                    <Icon className="h-5 w-5" />
                   </div>
-                );
-              })}
-            </div>
-          </div>
-
-          <div className="print-avoid-break px-8 py-8 sm:px-10">
-            <div className="text-xs font-semibold uppercase tracking-[0.3em] text-emerald-700">
-              Sector & Role Coverage
-            </div>
-            <div className="portfolio-print-grid mt-6 grid gap-6">
-              <div className="print-avoid-break rounded-[1.75rem] border border-slate-200 bg-white p-5">
-                <h2 className="font-display text-2xl font-semibold tracking-tight text-slate-950">
-                  Core Search Coverage
-                </h2>
-                <div className="mt-4 grid gap-3 sm:grid-cols-2">
-                  {capabilities.map((item) => (
-                    <div key={item} className="flex items-start gap-3 text-sm leading-7 text-slate-700">
-                      <BadgeCheck className="mt-1 h-4 w-4 shrink-0 text-emerald-700" />
-                      <span>{item}</span>
-                    </div>
-                  ))}
+                  <h3 className="font-display mt-5 text-2xl font-semibold tracking-tight text-slate-950">
+                    {item.title}
+                  </h3>
+                  <p className="mt-3 text-sm leading-7 text-slate-600">{item.text}</p>
                 </div>
-              </div>
-
-              <div className="print-avoid-break rounded-[1.75rem] border border-slate-200 bg-white p-5">
-                <h2 className="font-display text-2xl font-semibold tracking-tight text-slate-950">
-                  Roles We Cover
-                </h2>
-                <div className="mt-4 grid gap-3 sm:grid-cols-2">
-                  {roles.map((item) => (
-                    <div key={item} className="flex items-start gap-3 text-sm leading-7 text-slate-700">
-                      <BadgeCheck className="mt-1 h-4 w-4 shrink-0 text-emerald-700" />
-                      <span>{item}</span>
-                    </div>
-                  ))}
-                </div>
-              </div>
-            </div>
+              );
+            })}
           </div>
-        </section>
+        </PageSection>
 
-        <section className="print-avoid-break border-y border-slate-200 bg-slate-50/70 px-8 py-8 sm:px-10">
-          <div className="portfolio-print-stack grid gap-8 lg:grid-cols-[0.9fr_1.1fr]">
-            <div>
-              <div className="text-xs font-semibold uppercase tracking-[0.3em] text-emerald-700">
-                Search Process
+        <PageSection className="border-y border-slate-200 bg-slate-50/70">
+          <div className="max-w-3xl">
+            <div className="text-xs font-semibold uppercase tracking-[0.3em] text-emerald-700">Service Coverage</div>
+            <h2 className="font-display mt-4 text-4xl font-semibold tracking-tight text-slate-950">
+              Search support across leadership, specialist technology, and global hiring mandates
+            </h2>
+          </div>
+          <div className="mt-8 grid gap-5">
+            {servicePages.map((item) => (
+              <div key={item.title} className="print-avoid-break rounded-[1.75rem] border border-slate-200 bg-white p-6">
+                <h3 className="font-display text-2xl font-semibold tracking-tight text-slate-950">
+                  {item.title}
+                </h3>
+                <p className="mt-3 text-sm leading-7 text-slate-600">{item.text}</p>
               </div>
-              <h2 className="font-display mt-4 text-3xl font-semibold tracking-tight text-slate-950">
-                A disciplined workflow from brief to close
-              </h2>
-              <p className="mt-4 text-sm leading-7 text-slate-600">
-                We align on role context, map the market, run a focused search, and support interview,
-                offer, onboarding, and post-join follow-up.
-              </p>
-            </div>
-            <div className="portfolio-print-grid grid gap-4 sm:grid-cols-2">
-              {process.map((item, index) => (
-                <div key={item} className="print-avoid-break rounded-[1.75rem] border border-slate-200 bg-white p-5">
-                  <div className="text-sm font-semibold tracking-[0.24em] text-emerald-700">
-                    0{index + 1}
+            ))}
+          </div>
+          <div className="mt-8 grid gap-6 md:grid-cols-2">
+            <div className="rounded-[1.75rem] border border-slate-200 bg-white p-6">
+              <div className="text-xs font-semibold uppercase tracking-[0.3em] text-emerald-700">Core Search Coverage</div>
+              <div className="mt-4 grid gap-3">
+                {capabilities.map((item) => (
+                  <div key={item} className="flex items-start gap-3 text-sm leading-7 text-slate-700">
+                    <BadgeCheck className="mt-1 h-4 w-4 shrink-0 text-emerald-700" />
+                    <span>{item}</span>
                   </div>
-                  <div className="font-display mt-3 text-2xl font-semibold text-slate-950">{item}</div>
-                </div>
-              ))}
+                ))}
+              </div>
+            </div>
+            <div className="rounded-[1.75rem] border border-slate-200 bg-white p-6">
+              <div className="text-xs font-semibold uppercase tracking-[0.3em] text-emerald-700">Roles We Cover</div>
+              <div className="mt-4 grid gap-3">
+                {roles.map((item) => (
+                  <div key={item} className="flex items-start gap-3 text-sm leading-7 text-slate-700">
+                    <BadgeCheck className="mt-1 h-4 w-4 shrink-0 text-emerald-700" />
+                    <span>{item}</span>
+                  </div>
+                ))}
+              </div>
             </div>
           </div>
-        </section>
+        </PageSection>
 
-        <section className="portfolio-print-stack grid gap-0 lg:grid-cols-[1fr_1fr]">
-          <div className="print-avoid-break border-b border-slate-200 px-8 py-8 sm:px-10 lg:border-b-0 lg:border-r">
-            <div className="text-xs font-semibold uppercase tracking-[0.3em] text-emerald-700">
-              Why Credence
-            </div>
-            <div className="mt-6 grid gap-3">
+        <PageSection>
+          <div className="max-w-3xl">
+            <div className="text-xs font-semibold uppercase tracking-[0.3em] text-emerald-700">Search Process</div>
+            <h2 className="font-display mt-4 text-4xl font-semibold tracking-tight text-slate-950">
+              A disciplined workflow from briefing through close
+            </h2>
+            <p className="mt-4 text-base leading-8 text-slate-600">
+              We align on role context, map the market, run a focused search, and stay involved through interview, offer, onboarding, and post-join follow-up.
+            </p>
+          </div>
+          <div className="mt-8 grid gap-5 sm:grid-cols-2 xl:grid-cols-4">
+            {process.map((item, index) => (
+              <div key={item} className="print-avoid-break rounded-[1.75rem] border border-slate-200 bg-slate-50/70 p-6">
+                <div className="text-sm font-semibold tracking-[0.24em] text-emerald-700">0{index + 1}</div>
+                <div className="font-display mt-3 text-2xl font-semibold text-slate-950">{item}</div>
+              </div>
+            ))}
+          </div>
+          <div className="mt-8 rounded-[1.75rem] border border-slate-200 bg-white p-6">
+            <div className="text-xs font-semibold uppercase tracking-[0.3em] text-emerald-700">Delivery Principles</div>
+            <div className="mt-4 grid gap-3 md:grid-cols-2">
               {differentiators.map((item) => (
                 <div key={item} className="print-avoid-break flex items-start gap-3 rounded-2xl border border-slate-200 bg-slate-50/60 px-4 py-3 text-sm leading-7 text-slate-700">
                   <BadgeCheck className="mt-1 h-4 w-4 shrink-0 text-emerald-700" />
@@ -301,68 +363,104 @@ export default function PortfolioPage() {
               ))}
             </div>
           </div>
+        </PageSection>
 
-          <div className="print-avoid-break px-8 py-8 sm:px-10">
-            <div className="text-xs font-semibold uppercase tracking-[0.3em] text-emerald-700">
-              Contact
-            </div>
-            <h2 className="font-display mt-4 text-3xl font-semibold tracking-tight text-slate-950">
-              Ready to discuss a hiring mandate?
+        <PageSection className="border-y border-slate-200 bg-slate-50/70">
+          <div className="max-w-3xl">
+            <div className="text-xs font-semibold uppercase tracking-[0.3em] text-emerald-700">Client Speak</div>
+            <h2 className="font-display mt-4 text-4xl font-semibold tracking-tight text-slate-950">
+              Representative client feedback on our search approach
             </h2>
-            <p className="mt-4 text-sm leading-7 text-slate-600">
-              Credence Talent is best suited to founder-led businesses, scaling technology teams, and
-              established organizations hiring into important leadership or specialist roles where
-              quality, credibility, and long-term fit matter.
+            <p className="mt-4 text-base leading-8 text-slate-600">
+              Company names are intentionally withheld, but these quotes reflect the kind of feedback clients give on shortlist quality, communication, and overall search discipline.
             </p>
-            <div className="print-avoid-break print-preserve-surface mt-6 rounded-[1.75rem] border border-slate-200 bg-slate-950 p-6 text-white">
-              <div className="mt-5 space-y-4 text-sm leading-7 text-slate-300">
-                <div className="text-white">
-                  <div className="font-medium text-base">Muthupandi</div>
-                  <div>Head of Operations - Strategic &amp; Business Development</div>
-                </div>
-                <div>
-                  <div className="text-xs font-semibold uppercase tracking-[0.22em] text-emerald-300">
-                    Direct
-                  </div>
-                  <div>muthupandi@credencetalent.com</div>
-                </div>
-                <div>
-                  <div className="text-xs font-semibold uppercase tracking-[0.22em] text-emerald-300">
-                    Support
-                  </div>
-                  <div>hradmin@credencetalent.com</div>
-                </div>
-                <div>
-                  <div className="text-xs font-semibold uppercase tracking-[0.22em] text-emerald-300">
-                    Web
-                  </div>
-                  <div>https://credencetalent.com</div>
-                </div>
-                <div>
-                  <div className="text-xs font-semibold uppercase tracking-[0.22em] text-emerald-300">
-                    Markets
-                  </div>
-                  <div>North America | Europe | India | LATAM</div>
-                </div>
+          </div>
+          <div className="mt-8 grid gap-5 md:grid-cols-2">
+            {clientSpeak.map((item) => (
+              <div key={item.quote} className="print-avoid-break rounded-[1.75rem] border border-slate-200 bg-white p-6">
+                <p className="text-base leading-8 text-slate-700">&ldquo;{item.quote}&rdquo;</p>
+                <div className="mt-5 text-sm font-medium text-slate-950">{item.attribution}</div>
               </div>
-              <div className="mt-6 flex flex-wrap gap-3 print-hidden">
-                <a
-                  href="mailto:muthupandi@credencetalent.com?subject=Client%20Portfolio%20Discussion"
-                  className="inline-flex items-center rounded-2xl bg-white px-5 py-3 text-sm font-medium text-slate-950 transition hover:bg-slate-100"
-                >
-                  Discuss a Search
-                  <ArrowRight className="ml-2 h-4 w-4" />
-                </a>
-                <Link
-                  href="/engagement-models"
-                  className="inline-flex items-center rounded-2xl border border-white/15 bg-white/10 px-5 py-3 text-sm font-medium text-white transition hover:bg-white/15"
-                >
-                  View Engagement Models
-                </Link>
+            ))}
+          </div>
+        </PageSection>
+
+        <PageSection>
+          <div className="grid gap-8 lg:grid-cols-[1fr_1fr]">
+            <div>
+              <div className="text-xs font-semibold uppercase tracking-[0.3em] text-emerald-700">Engagement Models</div>
+              <div className="mt-6 grid gap-5">
+                {engagementModels.map((item) => {
+                  const Icon = item.icon;
+                  return (
+                    <div key={item.title} className="print-avoid-break rounded-[1.75rem] border border-slate-200 bg-slate-50/70 p-5">
+                      <div className="flex items-start gap-4">
+                        <div className="rounded-2xl bg-emerald-50 p-3 text-emerald-700">
+                          <Icon className="h-5 w-5" />
+                        </div>
+                        <div>
+                          <h3 className="font-display text-2xl font-semibold tracking-tight text-slate-950">
+                            {item.title}
+                          </h3>
+                          <p className="mt-2 text-sm leading-7 text-slate-600">{item.text}</p>
+                        </div>
+                      </div>
+                    </div>
+                  );
+                })}
+              </div>
+            </div>
+
+            <div>
+              <div className="text-xs font-semibold uppercase tracking-[0.3em] text-emerald-700">Contact</div>
+              <h2 className="font-display mt-4 text-3xl font-semibold tracking-tight text-slate-950">
+                Ready to discuss a hiring mandate?
+              </h2>
+              <p className="mt-4 text-sm leading-7 text-slate-600">
+                Credence Talent is best suited to founder-led businesses, scaling technology teams, and established organizations hiring into important leadership or specialist roles where quality, credibility, and long-term fit matter.
+              </p>
+              <div className="print-avoid-break print-preserve-surface mt-6 rounded-[1.75rem] border border-slate-200 bg-slate-950 p-6 text-white">
+                <div className="space-y-4 text-sm leading-7 text-slate-300">
+                  <div className="text-white">
+                    <div className="font-medium text-base">Muthupandi</div>
+                    <div>Head of Operations - Strategic &amp; Business Development</div>
+                  </div>
+                  <div>
+                    <div className="text-xs font-semibold uppercase tracking-[0.22em] text-emerald-300">Direct</div>
+                    <div>muthupandi@credencetalent.com</div>
+                  </div>
+                  <div>
+                    <div className="text-xs font-semibold uppercase tracking-[0.22em] text-emerald-300">Support</div>
+                    <div>hradmin@credencetalent.com</div>
+                  </div>
+                  <div>
+                    <div className="text-xs font-semibold uppercase tracking-[0.22em] text-emerald-300">Web</div>
+                    <div>https://credencetalent.com</div>
+                  </div>
+                  <div>
+                    <div className="text-xs font-semibold uppercase tracking-[0.22em] text-emerald-300">Markets</div>
+                    <div>North America | Europe | India | LATAM</div>
+                  </div>
+                </div>
+                <div className="mt-6 flex flex-wrap gap-3 print-hidden">
+                  <a
+                    href="mailto:muthupandi@credencetalent.com?subject=Client%20Portfolio%20Discussion"
+                    className="inline-flex items-center rounded-2xl bg-white px-5 py-3 text-sm font-medium text-slate-950 transition hover:bg-slate-100"
+                  >
+                    Discuss a Search
+                    <ArrowRight className="ml-2 h-4 w-4" />
+                  </a>
+                  <Link
+                    href="/engagement-models"
+                    className="inline-flex items-center rounded-2xl border border-white/15 bg-white/10 px-5 py-3 text-sm font-medium text-white transition hover:bg-white/15"
+                  >
+                    View Engagement Models
+                  </Link>
+                </div>
               </div>
             </div>
           </div>
-        </section>
+        </PageSection>
       </div>
     </main>
   );
